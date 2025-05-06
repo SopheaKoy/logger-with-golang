@@ -1,0 +1,54 @@
+2025-05-06 14:49:36,818 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 14:49:43,551 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-06 14:49:46,431 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-06 14:57:00,020 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 14:57:17,472 - error - error - [91mPOST /api/v1/public - 201 - 0.01 ms[0m
+2025-05-06 15:06:33,725 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:06:50,134 - error - error - [91mPOST /api/v1/public - 201 - 0.00 ms[0m
+2025-05-06 15:07:14,036 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:08:54,124 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:09:14,783 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:09:23,996 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:09:31,756 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:09:43,411 - info - info - [94mGET /api/v1/user - 200 - 0.00 ms[0m
+2025-05-06 15:10:18,902 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:10:26,458 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:10:44,866 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:10:48,279 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:11:05,868 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:11:07,922 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:11:56,058 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:12:01,059 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:16:36,928 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:16:49,272 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:16:54,929 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:17:04,180 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:17:20,361 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:17:24,357 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:17:33,389 - info - info - [94mPOST /api/v1/upload - 200 - 0.53 ms[0m
+2025-05-06 15:18:30,562 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:18:41,658 - info - info - [94mPOST /api/v1/upload - 200 - 0.43 ms[0m
+2025-05-06 15:19:10,911 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:25:58,720 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:26:00,428 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:27:37,984 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:27:38,654 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:28:54,647 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:29:09,207 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:30:46,985 - info - info - [94mGET / - 200 - 0.05 ms[0m
+2025-05-06 15:30:51,036 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-06 15:31:03,794 - error - error - [91mPOST /api/v1/upload - 401 - 0.02 ms[0m
+2025-05-06 15:31:07,928 - error - error - [91mPOST /api/v1/upload - 401 - 0.01 ms[0m
+2025-05-06 15:32:09,636 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:32:21,433 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:32:30,577 - error - error - [91mPOST /api/v1/upload - 401 - 0.03 ms[0m
+2025-05-06 15:33:07,340 - error - error - [91mPOST /api/v1/upload - 400 - 0.05 ms[0m
+2025-05-06 15:33:25,746 - info - info - [94mPOST /api/v1/upload - 200 - 0.84 ms[0m
+2025-05-06 15:35:52,258 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:39:44,404 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:39:55,770 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:41:34,693 - info - info - [94mStarting server on port 3000...[0m
+2025-05-06 15:42:31,961 - info - info - [94mPOST /api/v1/upload - 200 - 1.22 ms[0m
+2025-05-06 15:42:40,072 - error - error - [91mPOST /api/v1/upload - 401 - 0.01 ms[0m
+2025-05-06 15:42:49,286 - info - info - [94mPOST /api/v1/upload - 200 - 0.87 ms[0m
+2025-05-06 15:45:41,201 - info - info - [94mGET / - 200 - 0.01 ms[0m
