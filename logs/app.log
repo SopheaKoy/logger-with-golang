@@ -52,3 +52,17 @@
 2025-05-06 15:42:40,072 - error - error - [91mPOST /api/v1/upload - 401 - 0.01 ms[0m
 2025-05-06 15:42:49,286 - info - info - [94mPOST /api/v1/upload - 200 - 0.87 ms[0m
 2025-05-06 15:45:41,201 - info - info - [94mGET / - 200 - 0.01 ms[0m
+2025-05-07 10:19:26,472 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:19:34,307 - info - info - [94mGET /api/v1/docta/ - 200 - 0.03 ms[0m
+2025-05-07 10:19:34,332 - info - info - [94mGET /favicon.ico - 200 - 0.01 ms[0m
+2025-05-07 10:19:41,388 - info - info - [94mGET /swagger/doc.json - 200 - 0.00 ms[0m
+2025-05-07 10:19:45,561 - info - info - [94mGET /swagger/doc.json - 200 - 0.00 ms[0m
+2025-05-07 10:19:57,830 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:20:07,401 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:20:08,937 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:20:10,026 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:20:11,087 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:21:23,918 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:23:00,470 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:23:12,050 - info - info - [94mStarting server on port 3000...[0m
+2025-05-07 10:23:18,290 - info - info - [94mStarting server on port 3000...[0m
