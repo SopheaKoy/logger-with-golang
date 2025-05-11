@@ -124,3 +124,165 @@
 2025-05-11 12:30:27,631 - error - error - [91mGET /me - 404 - 0.03 ms[0m
 2025-05-11 12:30:40,579 - info - info - [94mStarting server on port 3000...[0m
 2025-05-11 12:30:41,578 - error - error - [91mGET /me - 404 - 0.49 ms[0m
+2025-05-11 12:32:28,832 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:35:09,307 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:35:11,221 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:35:12,139 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:35:20,782 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:35:29,806 - error - error - [91mGET /me - 404 - 0.23 ms[0m
+2025-05-11 12:37:04,648 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:37:05,505 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:37:06,799 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:37:16,363 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:37:23,046 - error - error - [91mGET /me - 404 - 0.40 ms[0m
+2025-05-11 12:40:21,598 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:40:43,671 - error - error - [91m[91mGET /me - 404 - 0.20 ms[0m[0m
+2025-05-11 12:40:52,984 - error - error - [91m[91mGET /me - 404 - 0.06 ms[0m[0m
+2025-05-11 12:40:53,450 - error - error - [91m[91mGET /me - 404 - 0.05 ms[0m[0m
+2025-05-11 12:42:19,453 - info - info - Starting server on port 3000...
+2025-05-11 12:42:21,852 - info - info - Starting server on port 3000...
+2025-05-11 12:42:23,849 - error - error - GET /me - 404 - 0.45 ms
+2025-05-11 12:42:25,029 - error - error - GET /me - 404 - 0.05 ms
+2025-05-11 12:42:25,630 - error - error - GET /me - 404 - 0.02 ms
+2025-05-11 12:42:31,925 - error - error - GET /me - 404 - 0.04 ms
+2025-05-11 12:42:32,661 - error - error - GET /me - 404 - 0.03 ms
+2025-05-11 12:42:52,369 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:42:57,965 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:42:58,922 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:47:49,403 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:56:16,724 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:57:29,868 - info - info - Starting server on port 3000...
+2025-05-11 12:57:30,919 - info - info - Starting server on port 3000...
+2025-05-11 12:57:51,441 - info - info - Starting server on port 3000...
+2025-05-11 12:58:01,815 - error - error - GET /me - 404 - 0.41 ms
+2025-05-11 12:58:05,338 - error - error - GET /me - 404 - 0.04 ms
+2025-05-11 12:58:06,081 - error - error - GET /me - 404 - 0.08 ms
+2025-05-11 12:58:07,298 - error - error - GET /me - 404 - 0.04 ms
+2025-05-11 12:58:32,180 - error - error - GET /public - 404 - 0.03 ms
+2025-05-11 12:58:46,241 - info - info - GET /api/v1/public - 200 - 0.02 ms
+2025-05-11 12:59:21,452 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 12:59:22,163 - info - info - [94mGET /api/v1/public - 200 - 0.03 ms[0m
+2025-05-11 12:59:22,875 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 12:59:27,486 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 12:59:30,524 - error - error - [91mGET /api/v1/publis - 404 - 0.14 ms[0m
+2025-05-11 12:59:32,282 - error - error - [91mGET /api/v1/publis - 404 - 0.03 ms[0m
+2025-05-11 12:59:34,034 - error - error - [91mGET /api/v1/publis - 404 - 0.05 ms[0m
+2025-05-11 12:59:38,093 - error - error - [91mPOST /api/v1/publis - 404 - 0.05 ms[0m
+2025-05-11 12:59:38,986 - error - error - [91mPOST /api/v1/publis - 404 - 0.04 ms[0m
+2025-05-11 12:59:41,829 - error - error - [91mPOST /api/v1/publis - 404 - 0.03 ms[0m
+2025-05-11 12:59:45,385 - error - error - [91mPOST /api/v1/public - 201 - 0.00 ms[0m
+2025-05-11 12:59:46,061 - error - error - [91mPOST /api/v1/public - 201 - 0.00 ms[0m
+2025-05-11 12:59:47,682 - error - error - [91mPOST /api/v1/public - 201 - 0.00 ms[0m
+2025-05-11 12:59:50,090 - error - error - [91mPOST /api/v1/public - 201 - 0.00 ms[0m
+2025-05-11 13:00:05,388 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:00:05,844 - error - error - [91mPOST /api/v1/public - 404 - 0.25 ms[0m
+2025-05-11 13:00:06,358 - error - error - [91mPOST /api/v1/public - 404 - 0.04 ms[0m
+2025-05-11 13:00:06,841 - error - error - [91mPOST /api/v1/public - 404 - 0.05 ms[0m
+2025-05-11 13:00:09,177 - error - error - [91mPOST /api/v1/public - 404 - 0.05 ms[0m
+2025-05-11 13:35:56,585 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:35:57,467 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:35:59,080 - error - error - [91mPOST /api/v1/public - 404 - 0.28 ms[0m
+2025-05-11 13:36:00,236 - error - error - [91mPOST /api/v1/public - 404 - 0.10 ms[0m
+2025-05-11 13:36:04,235 - error - error - [91mPOST /api/v1/public - 404 - 0.04 ms[0m
+2025-05-11 13:36:13,452 - info - info - [94mGET /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 13:36:16,571 - error - error - [91mPOST /api/v1/public - 404 - 0.04 ms[0m
+2025-05-11 13:49:49,661 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:49:50,784 - info - info - [94mGET /ping - 200 - 0.02 ms[0m
+2025-05-11 13:49:51,727 - info - info - [94mGET /ping - 200 - 0.01 ms[0m
+2025-05-11 13:49:53,920 - info - info - [94mGET /ping - 200 - 0.01 ms[0m
+2025-05-11 13:49:54,416 - info - info - [94mGET /ping - 200 - 0.01 ms[0m
+2025-05-11 13:50:05,797 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:50:10,890 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:50:37,472 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:50:44,530 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 13:50:45,297 - info - info - [94mGET /ping - 200 - 0.01 ms[0m
+2025-05-11 13:50:45,913 - info - info - [94mGET /ping - 200 - 0.01 ms[0m
+2025-05-11 13:50:55,370 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 13:50:56,060 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 13:50:59,148 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 13:51:01,525 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:55:26,764 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:55:28,595 - info - info - [94mPOST /api/v1/public - 200 - 0.03 ms[0m
+2025-05-11 15:55:29,427 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:55:30,568 - info - info - [94mPOST /api/v1/public - 200 - 0.02 ms[0m
+2025-05-11 15:55:32,958 - info - info - [94mPOST /api/v1/public - 200 - 0.02 ms[0m
+2025-05-11 15:55:56,865 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:56:29,509 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:56:36,538 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:57:20,409 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:57:21,323 - info - info - [94mPOST /api/v1/public - 200 - 0.02 ms[0m
+2025-05-11 15:57:22,845 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:57:23,317 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:57:25,107 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:57:25,496 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 15:59:06,729 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 15:59:10,028 - info - info - [94mPOST /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 15:59:10,736 - info - info - [94mPOST /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 15:59:11,235 - info - info - [94mPOST /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 16:00:28,900 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:00:47,518 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:00:48,618 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:00:57,341 - info - info - [94mPOST /api/v1/public - 200 - 0.04 ms[0m
+2025-05-11 16:00:58,034 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:01:09,871 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:01:10,200 - info - info - [94mPOST /api/v1/public - 200 - 0.02 ms[0m
+2025-05-11 16:01:10,806 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:02:45,990 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:02:51,176 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:02:51,694 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:02:52,694 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:02:53,395 - info - info - [94mPOST /api/v1/public - 200 - 0.05 ms[0m
+2025-05-11 16:03:13,610 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:03:14,303 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:03:15,483 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:03:16,011 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:04:25,648 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:04:26,481 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:04:28,248 - info - info - [94mPOST /api/v1/public - 200 - 0.08 ms[0m
+2025-05-11 16:04:28,846 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:04:33,543 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:04:33,881 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:04:34,195 - info - info - [94mPOST /api/v1/public - 200 - 0.01 ms[0m
+2025-05-11 16:04:43,837 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:07:34,871 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:07:39,626 - error - error - [91mPOST /api/v1/public - 405 - 0.02 ms[0m
+2025-05-11 16:07:41,058 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:07:41,628 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:07:45,350 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:07:45,876 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:07:46,687 - error - error - [91mPOST /api/v1/public - 405 - 0.05 ms[0m
+2025-05-11 16:07:51,218 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 16:07:52,049 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms[0m
+2025-05-11 16:07:55,643 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:07:56,311 - error - error - [91mPOST /api/v1/public - 405 - 0.01 ms[0m
+2025-05-11 16:08:09,454 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:10:12,051 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:14:18,420 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:14:20,944 - error - error - [91mPOST /api/v1/public - 405 - 0.37 ms[0m
+2025-05-11 16:14:23,141 - error - error - [91mPOST /api/v1/public - 405 - 0.04 ms[0m
+2025-05-11 16:14:23,850 - error - error - [91mPOST /api/v1/public - 405 - 0.05 ms[0m
+2025-05-11 16:14:35,232 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:14:36,177 - error - error - [91mPOST /api/v1/public - 405 - 0.31 ms[0m
+2025-05-11 16:14:55,932 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:14:57,860 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:14:58,229 - error - error - [91mPOST /api/v1/public - 405 - 0.17 ms[0m
+2025-05-11 16:14:59,841 - error - error - [91mPOST /api/v1/public - 405 - 0.04 ms[0m
+2025-05-11 16:15:07,184 - info - info - [94mGET /api/v1/public - 200 - 0.06 ms[0m
+2025-05-11 16:15:07,950 - info - info - [94mGET /api/v1/public - 200 - 0.04 ms[0m
+2025-05-11 16:15:13,189 - error - error - [91mPOST /api/v1/public - 405 - 0.04 ms[0m
+2025-05-11 16:15:16,789 - error - error - [91mPOST /api/v1/publi - 404 - 0.04 ms[0m
+2025-05-11 16:15:17,475 - error - error - [91mPOST /api/v1/publi - 404 - 0.04 ms[0m
+2025-05-11 16:15:20,123 - error - error - [91mPOST /api/v1/publ - 404 - 0.03 ms[0m
+2025-05-11 16:15:23,145 - error - error - [91mPOST / - 404 - 0.03 ms[0m
+2025-05-11 16:15:23,532 - error - error - [91mPOST / - 404 - 0.03 ms[0m
+2025-05-11 16:15:23,979 - error - error - [91mPOST / - 404 - 0.04 ms[0m
+2025-05-11 16:15:24,667 - error - error - [91mPOST / - 404 - 0.02 ms[0m
+2025-05-11 16:15:27,505 - error - error - [91mPOST / - 404 - 0.03 ms[0m
+2025-05-11 16:16:14,176 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:16:15,848 - error - error - [91mPOST / - 404 - 0.01 ms[0m
+2025-05-11 16:16:16,524 - error - error - [91mPOST / - 404 - 0.00 ms[0m
+2025-05-11 16:16:16,976 - error - error - [91mPOST / - 404 - 0.01 ms[0m
+2025-05-11 16:16:18,976 - error - error - [91mPOST / - 404 - 0.01 ms[0m
+2025-05-11 16:16:19,372 - error - error - [91mPOST / - 404 - 0.00 ms[0m
+2025-05-11 16:16:30,123 - info - info - [94mStarting server on port 3000...[0m
+2025-05-11 16:16:31,546 - info - info - [94mStarting server on port 3000...[0m

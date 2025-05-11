@@ -31,14 +31,15 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 				"message": "Server is currently under maintenance. Please try again later.",
 			})
 		}
-
-
-
+		
 		start        := time.Now()
 		err          := c.Next()
-		statusCode   := c.Response().StatusCode()
 		durationInMs := float64((time.Since(start)).Nanoseconds()) / 1e6 // Convert nanoseconds to milliseconds
-
+		statusCode   := c.Response().StatusCode()
+		
+		if fiberErr, ok := err.(*fiber.Error); ok {
+			statusCode = fiberErr.Code
+		}
 		accessLogMessage := fmt.Sprintf("%s %s - %d - %.2f ms",
 			c.Method(),
 			c.OriginalURL(),

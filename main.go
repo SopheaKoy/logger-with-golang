@@ -62,20 +62,20 @@ func main() {
 
 	// #================ call habdler
 	apiPrefix.Get("/public", publicHandler)
-	apiPrefix.Post("/public", publicCreationHandler)
+	// apiPrefix.Post("/public", publicCreationHandler)
 
 
 	apiPrefix.Get("/user", userHandler)
 
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
 
-	app.Use(func(c *fiber.Ctx) error {
-		fmt.Println("Route name =", c.OriginalURL())
-		fmt.Println("Method     =", c.Method())
-		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"error": "Route not found",
-		})
-	})
+	// app.Use(func(c *fiber.Ctx) error {
+	// 	fmt.Println("Route name =", c.OriginalURL())
+	// 	fmt.Println("Method     =", c.Method())
+	// 	return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+	// 		"error": "Route not found",
+	// 	})
+	// })
 
 	// Log the starting message
 	log.Info("Starting server on port 3000...")
@@ -160,4 +160,3 @@ func fileHandler(c *fiber.Ctx) error {
 		"file":    fileHeader.Filename,
 	})
 }
-
