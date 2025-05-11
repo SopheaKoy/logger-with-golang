@@ -37,9 +37,6 @@ func main() {
 	// Create a new logger instance from your custom logger
 	log := config.NewLogger()
 
-	// Create log middleware instance with the logger
-	logMiddleware := middlewares.NewLogMiddleware(log)
-
 	// Create an instance of Fiber
 	app := fiber.New(fiber.Config{
 		StrictRouting: true,
@@ -54,11 +51,10 @@ func main() {
 		URL			: "/swagger/doc.json",
 		DeepLinking	: true,
 	}))
-
-	// #=================== swagger configuration
-
-
+	
 	// Apply the logging middleware
+	// Create log middleware instance with the logger
+	logMiddleware := middlewares.NewLogMiddleware(log)
 	app.Use(logMiddleware.LogAccess())
 
 	// Add group API with /api/v1 prefix
@@ -71,8 +67,15 @@ func main() {
 
 	apiPrefix.Get("/user", userHandler)
 
-
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
+
+	app.Use(func(c *fiber.Ctx) error {
+		fmt.Println("Route name =", c.OriginalURL())
+		fmt.Println("Method     =", c.Method())
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": "Route not found",
+		})
+	})
 
 	// Log the starting message
 	log.Info("Starting server on port 3000...")
@@ -105,7 +108,6 @@ func publicHandler(c *fiber.Ctx) error {
 // @Failure 500 {object} ErrorResponse "Server error"
 // @Router /public [post]
 func publicCreationHandler(c *fiber.Ctx) error {
-    // Your implementation here
     return c.Status(fiber.StatusCreated).SendString("Hello, Public Page....!!!")
 }
 

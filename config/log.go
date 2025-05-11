@@ -135,3 +135,13 @@ func (l *Logger) Error() *ErrorHandler {
 func sendError(level ErrorLevel, msg string) {
 	fmt.Printf("[SendError] Level: %s | Message: %s\n", level, msg)
 }
+
+// Helper function to check if the output is a terminal
+func isTerminal(f *os.File) bool {
+	stat, err := f.Stat()
+	if err != nil {
+		return false
+	}
+	// Check if it's a terminal (usually a TTY device)
+	return (stat.Mode() & os.ModeCharDevice) != 0
+}

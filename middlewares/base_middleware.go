@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 
 	"logger/config"
@@ -31,6 +32,8 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 			})
 		}
 
+
+
 		start        := time.Now()
 		err          := c.Next()
 		statusCode   := c.Response().StatusCode()
@@ -57,11 +60,32 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 	}
 }
 
+// HTTPExceptionHandler handles general HTTP errors and logs them
 func HTTPExceptionHandler(c *fiber.Ctx, err error) error {
-	return nil
+	code := fiber.StatusInternalServerError
+	msg := "Internal Server Error"
+
+	if e, ok := err.(*fiber.Error); ok {
+		code = e.Code
+		msg = e.Message
+	}
+
+	return c.Status(code).JSON(fiber.Map{
+		"error": msg,
+	})
 }
 
-// RequestValidationErrorHandler handles the validation error and returns a response
+// RequestValidationErrorHandler handles validator.ValidationErrors
 func RequestValidationErrorHandler(c *fiber.Ctx, err error) error {
-	return nil
+	if validationErrors, ok := err.(validator.ValidationErrors); ok {
+		errs := make(map[string]string)
+		for _, fieldErr := range validationErrors {
+			errs[fieldErr.Field()] = fmt.Sprintf("must be %s", fieldErr.Tag())
+		}
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"validation_errors": errs,
+		})
+	}
+
+	return HTTPExceptionHandler(c, err)
 }
