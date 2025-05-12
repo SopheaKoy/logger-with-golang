@@ -34,6 +34,32 @@ const (
 	logFileName   = "app.log"
 )
 
+
+type DetailLevel int
+
+const (
+    BasicLevel DetailLevel = iota
+    StandardLevel
+    VerboseLevel
+)
+type LoggerConfig struct {
+    LogDir              string
+    MaxSize             int64       
+    TimeFormat          string
+    RetentionDays       int64
+    RotationFormat      string
+    DetailLevel         DetailLevel 
+}
+
+var DefaultConfig    = LoggerConfig{
+    LogDir           : "logs"                ,
+    MaxSize          : 10                    , // MB
+    TimeFormat       : "2006-01-02 15:04:05" ,
+    RotationFormat   : "2006-01-02"          , 
+    RetentionDays    : 7                     ,
+    DetailLevel      : BasicLevel            ,
+}
+
 // CustomFormatter that formats logs
 type CustomFormatter struct {
 	IsTerminal bool

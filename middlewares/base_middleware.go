@@ -47,8 +47,9 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 			durationInMs,
 		)
 
-		fmt.Println(accessLogMessage)
-
+		fmt.Println("Logger from =",accessLogMessage)
+		
+		lm.Logger.Info(accessLogMessage)
 		if c.Method() != fiber.MethodOptions {
 			if statusCode != fiber.StatusOK {
 				lm.Logger.Error().Error(accessLogMessage)
