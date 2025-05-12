@@ -25,8 +25,6 @@ type ErrorResponse struct {
     Message string `json:"message" example:"Error message"`
     Code    int    `json:"code" example:"400"`
 }
-// #======================== 
-
 
 // @title My API
 // @version 1.0
@@ -34,12 +32,14 @@ type ErrorResponse struct {
 // @host localhost:3000
 // @BasePath /api/v1
 func main() {
+
 	// Create a new logger instance from your custom logger
 	log := config.NewLogger()
 
 	// Create an instance of Fiber
 	app := fiber.New(fiber.Config{
-		StrictRouting: true,
+		StrictRouting : true,
+		ErrorHandler  : middlewares.HTTPExceptionHandler,
 	})
 
 	// #=================== swagger configuration
@@ -60,22 +60,13 @@ func main() {
 	// Add group API with /api/v1 prefix
 	apiPrefix := app.Group("/api/v1")
 
-	// #================ call habdler
 	apiPrefix.Get("/public", publicHandler)
-	// apiPrefix.Post("/public", publicCreationHandler)
-
+	apiPrefix.Post("/public", publicCreationHandler)
 
 	apiPrefix.Get("/user", userHandler)
 
+	// Upload Service
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
-
-	// app.Use(func(c *fiber.Ctx) error {
-	// 	fmt.Println("Route name =", c.OriginalURL())
-	// 	fmt.Println("Method     =", c.Method())
-	// 	return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-	// 		"error": "Route not found",
-	// 	})
-	// })
 
 	// Log the starting message
 	log.Info("Starting server on port 3000...")

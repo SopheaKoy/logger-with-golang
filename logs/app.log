@@ -286,3 +286,158 @@
 2025-05-11 16:16:19,372 - error - error - [91mPOST / - 404 - 0.00 ms[0m
 2025-05-11 16:16:30,123 - info - info - [94mStarting server on port 3000...[0m
 2025-05-11 16:16:31,546 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:33:25,972 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:33:57,917 - error - error - [91mPOST / - 404 - 0.01 ms | Body: [0m
+2025-05-12 17:34:06,272 - error - error - [91mPOST /api/v1/user - 405 - 0.02 ms | Body: [0m
+2025-05-12 17:34:49,585 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:34:50,200 - error - error - [91mPOST /api/v1/user - 405 - 0.02 ms | Body: [0m
+2025-05-12 17:35:19,358 - error - error - [91mPOST /api/v1/upload - 401 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:35:21,933 - error - error - [91mPOST /api/v1/upload - 401 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:35:22,492 - error - error - [91mPOST /api/v1/upload - 401 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:35:23,823 - error - error - [91mPOST /api/v1/upload - 401 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:35:24,738 - error - error - [91mPOST /api/v1/upload - 401 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 17:35:59,395 - error - error - [91mPOST /api/v1/upload - 401 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:36:12,263 - error - error - [91mPOST /api/v1/upload - 401 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:36:30,499 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:36:43,161 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:40:05,981 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:40:07,862 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:40:11,841 - error - error - [91mPOST /api/v1/upload - 400 - 0.04 ms | Body: {"file":[""]}[0m
+2025-05-12 17:44:18,770 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:44:22,727 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:44:48,858 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:15,549 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:16,810 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:21,452 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:36,379 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:49,488 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:51,825 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:45:53,984 - error - error - [91mPOST /api/v1/upload - 400 - 0.04 ms | Body: {"file":[""]}[0m
+2025-05-12 17:45:54,802 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:45:56,169 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:14,602 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:46:15,565 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:46:16,793 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:17,506 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:18,232 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:18,777 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:19,151 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:46:48,029 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:47:49,465 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:47:50,271 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:47:51,357 - error - error - [91mPOST /api/v1/upload - 400 - 0.04 ms | Body: {"file":[""]}[0m
+2025-05-12 17:47:51,892 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:47:52,273 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:47:53,519 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:06,690 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:13,788 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:14,762 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:15,431 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:30,451 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:35,549 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:39,136 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:42,724 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:48:43,874 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:44,495 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:45,394 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:46,614 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:48,888 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:49,587 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:48:50,004 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:49:04,838 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:49:06,276 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 17:49:07,057 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:49:35,879 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:49:45,601 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:49:54,395 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:49:59,956 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:50:01,936 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:50:03,671 - error - error - [91mPOST /api/v1/upload - 400 - 0.04 ms | Body: {"file":[""]}[0m
+2025-05-12 17:50:04,746 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:50:05,423 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:03,434 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:51:06,560 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:51:30,024 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 17:51:31,800 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:32,573 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:33,108 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:33,404 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:33,925 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:36,388 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:43,059 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:48,720 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:50,168 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:51,179 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 17:51:52,391 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:06:28,829 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:06:33,665 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 18:06:39,594 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:06:40,272 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:06:43,122 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:06:43,847 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:32,586 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:07:37,612 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:39,637 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:41,314 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:41,745 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:43,595 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:44,726 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:46,080 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:47,482 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:07:50,813 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:08:18,242 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:08:20,564 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:08:36,106 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:08:38,566 - error - error - [91mPOST /api/v1/upload - 400 - 0.02 ms | Body: {"file":[""]}[0m
+2025-05-12 18:08:39,037 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:08:59,158 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:09:01,855 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:09:06,016 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:09:08,375 - error - error - [91mPOST /api/v1/upload - 400 - 0.04 ms | Body: {"file":[""]}[0m
+2025-05-12 18:09:08,804 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:09:09,462 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:09:10,103 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:09:20,855 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:09:28,611 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:14:16,859 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:14:17,476 - error - error - [91mGET /api/v1/upload - 405 - 0.00 ms | Body: [0m
+2025-05-12 18:14:18,983 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:14:19,601 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:15:44,449 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:15:55,956 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:16:06,862 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:16:21,754 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:16:28,070 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:16:28,626 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:16:30,988 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:16:31,519 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:16:50,558 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:22:26,136 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:22:56,802 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:24,680 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:27,192 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:30,548 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:31,851 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:34,474 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:23:36,981 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:23:38,052 - error - error - [91mGET /api/v1/upload - 405 - 0.34 ms | Body: [0m
+2025-05-12 18:23:38,811 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:23:40,028 - error - error - [91mGET /api/v1/upload - 405 - 0.00 ms | Body: [0m
+2025-05-12 18:23:40,314 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:23:40,803 - error - error - [91mGET /api/v1/upload - 405 - 0.00 ms | Body: [0m
+2025-05-12 18:23:42,227 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:23:43,663 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:23:44,078 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:26:59,966 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:27:12,151 - error - error - [91mGET /api/v1/upload - 405 - 0.02 ms | Body: [0m
+2025-05-12 18:29:52,820 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:29:57,679 - error - error - [91mGET /api/v1/upload - 405 - 0.02 ms | Body: [0m
+2025-05-12 18:29:58,340 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:30:29,600 - error - error - [91mGET /api/v1/upload - 405 - 0.01 ms | Body: [0m
+2025-05-12 18:31:00,812 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:31:01,641 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:31:02,455 - error - error - [91mPOST /api/v1/upload - 400 - 0.01 ms | Body: {"file":[""]}[0m
+2025-05-12 18:31:04,513 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:31:05,276 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
+2025-05-12 18:34:32,253 - info - info - [94mStarting server on port 3000...[0m
+2025-05-12 18:37:03,008 - info - info - [94mStarting server on port 3000...[0m
