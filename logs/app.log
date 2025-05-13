@@ -441,3 +441,4 @@
 2025-05-12 18:31:05,276 - error - error - [91mPOST /api/v1/upload - 400 - 0.00 ms | Body: {"file":[""]}[0m
 2025-05-12 18:34:32,253 - info - info - [94mStarting server on port 3000...[0m
 2025-05-12 18:37:03,008 - info - info - [94mStarting server on port 3000...[0m
+2025-05-13 09:32:05,861 - info - info - [94mStarting server on port 3000...[0m
