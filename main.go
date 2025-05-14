@@ -11,10 +11,10 @@ import (
 	"github.com/gofiber/swagger"
 
 	"logger/handler/auth"
+
+	"logger/db"
 )
 
-// #========================
-// CreatePublicRequest represents the request body for creating a public resource
 type CreatePublicRequest struct {
     Name        string `json:"name" example:"Resource name"`
     Description string `json:"description" example:"Resource description"`
@@ -25,6 +25,8 @@ type ErrorResponse struct {
     Message string `json:"message" example:"Error message"`
     Code    int    `json:"code" example:"400"`
 }
+// #======================== 
+
 
 // @title My API
 // @version 1.0
@@ -33,13 +35,18 @@ type ErrorResponse struct {
 // @BasePath /api/v1
 func main() {
 
+	// connection db
+	db.InitDB()
+
 	// Create a new logger instance from your custom logger
 	log := config.NewLogger()
 
+	// Create log middleware instance with the logger
+	logMiddleware := middlewares.NewLogMiddleware(log)
+
 	// Create an instance of Fiber
 	app := fiber.New(fiber.Config{
-		StrictRouting : true,
-		ErrorHandler  : middlewares.HTTPExceptionHandler,
+		StrictRouting: true,
 	})
 
 	// #=================== swagger configuration
@@ -51,21 +58,24 @@ func main() {
 		URL			: "/swagger/doc.json",
 		DeepLinking	: true,
 	}))
-	
+
+	// #=================== swagger configuration
+
+
 	// Apply the logging middleware
-	// Create log middleware instance with the logger
-	logMiddleware := middlewares.NewLogMiddleware(log)
 	app.Use(logMiddleware.LogAccess())
 
 	// Add group API with /api/v1 prefix
 	apiPrefix := app.Group("/api/v1")
 
+	// #================ call habdler
 	apiPrefix.Get("/public", publicHandler)
 	apiPrefix.Post("/public", publicCreationHandler)
 
+
 	apiPrefix.Get("/user", userHandler)
 
-	// Upload Service
+
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
 
 	// Log the starting message
@@ -99,6 +109,7 @@ func publicHandler(c *fiber.Ctx) error {
 // @Failure 500 {object} ErrorResponse "Server error"
 // @Router /public [post]
 func publicCreationHandler(c *fiber.Ctx) error {
+    // Your implementation here
     return c.Status(fiber.StatusCreated).SendString("Hello, Public Page....!!!")
 }
 
