@@ -27,8 +27,7 @@ pipeline {
 
                         // project name
                         project_name = config.PROJECT_NAME
-                        echo "Project Name: ${project_name}"
-                        
+                        echo "Project Name: ${project_name}"   
                     }
                 }
             }
