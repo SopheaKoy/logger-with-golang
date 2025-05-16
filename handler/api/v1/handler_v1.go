@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func UserHandler(app *fiber.App) (schema.IResponseBase, error) {
+func UserHandler(app *fiber.App) (*schema.IResponseBase, error) {
     app.Post("/list", func(c *fiber.Ctx) error {
         users, err := services.ListUser()
         if err != nil {
@@ -18,6 +18,5 @@ func UserHandler(app *fiber.App) (schema.IResponseBase, error) {
         return c.JSON(users)
     })
     
-    // Dereference the pointer with *
-    return *schema.NewIResponseBase("200", "User routes registered successfully", nil), nil
+    return schema.NewIResponseBase("200", "User routes registered successfully", nil), nil
 }
