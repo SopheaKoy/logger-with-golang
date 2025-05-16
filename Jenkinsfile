@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        label 'docker-agent-1'
-    }
-
+    agent any
     stages {
         stage('Load Configuration') {
             steps {
@@ -33,5 +30,5 @@ pipeline {
             }
         }
     }
-    
+
 }
