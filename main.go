@@ -17,8 +17,8 @@ import (
 )
 
 type CreatePublicRequest struct {
-	Name        string `json:"name" example:"Resource name"`
-	Description string `json:"description" example:"Resource description"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
 }
 
 // ErrorResponse represents an error response
