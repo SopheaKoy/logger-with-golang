@@ -1,10 +1,12 @@
 pipeline {
     agent any
+
     stages {
         stage('Load Configuration') {
             steps {
                 script {
-                    
+                    def configFileId = '33a57b3f-a0f7-40d9-91ec-406743f45d63'  // <<---- Add this line
+
                     try {
                         def provider = org.jenkinsci.lib.configprovider.ConfigProvider.all()
                         provider.each { p ->
@@ -23,7 +25,7 @@ pipeline {
                         def config = readYaml file: env.CONFIG_FILE 
 
                         // project name
-                        project_name = config.PROJECT_NAME
+                        def project_name = config.PROJECT_NAME
                         echo "Project Name: ${project_name}"   
                     }
                 }
