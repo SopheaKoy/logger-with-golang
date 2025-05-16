@@ -5,60 +5,79 @@ pipeline {
         stage('Load Configuration') {
             steps {
                 script {
-                    def configFileId = '221c9bb7-955e-4feb-9329-9e60b3399d33'
-                    
-                    echo "Starting to search for config file ID: ${configFileId}"
-                    def found = false
-                    def allFiles = []
                     
                     try {
                         def provider = org.jenkinsci.lib.configprovider.ConfigProvider.all()
-                        echo "Found ${provider.size()} config providers"
-                        
                         provider.each { p ->
-                            echo "Provider: ${p.getClass().getName()}"
-                            def configs = p.getAllConfigs()
-                            echo "Provider has ${configs.size()} configs"
-                            
-                            configs.each { c ->
-                                allFiles.add("${c.name} (${c.id})")
+                            p.getAllConfigs().each { c ->
                                 echo "Found config file: ${c.name} with ID: ${c.id}"
-                                if (c.id == configFileId) {
-                                    echo "MATCH FOUND: ${c.name} with ID: ${c.id}"
-                                    found = true
-                                }
                             }
                         }
                     } catch (Exception e) {
                         echo "Error listing config files: ${e.message}"
-                        echo "Exception stack trace: ${e.printStackTrace()}"
                     }
+                    def configFileId = ""
+                    switch(env.BRANCH_NAME) {
+                        case 'sophea':
+                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  
+                            break
+                        default:
+                            configFileId = "65ce3b9e-b918-4ee8-a23e-7f5239aeb2ee"  // Default to Dev config
+                            break
+                    }
+                    echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
 
-                    if (found) {
-                        echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
-                        try {
-                            configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
-                                echo "Config file loaded to: ${env.CONFIG_FILE}"
-                                echo "Config file exists: ${fileExists(env.CONFIG_FILE)}"
-                                
-                                if (fileExists(env.CONFIG_FILE)) {
-                                    echo "Config file content: ${readFile(env.CONFIG_FILE).take(100)}..." // Show first 100 chars
-                                    def config = readYaml file: env.CONFIG_FILE
-                                    def project_name = config.PROJECT_NAME
-                                    echo "Project Name: ${project_name}"
-                                } else {
-                                    error "Config file resolved but doesn't exist at path: ${env.CONFIG_FILE}"
-                                }
-                            }
-                        } catch (Exception e) {
-                            echo "Error in configFileProvider: ${e.message}"
-                            echo "Exception stack trace: ${e.printStackTrace()}"
-                            echo "Available config files: ${allFiles.join('\n')}"
-                            error "Failed to use config file"
-                        }
-                    } else {
-                        echo "Available config files: ${allFiles.join('\n')}"
-                        error "Config file ID ${configFileId} not found! Please verify it exists in Jenkins."
+                    // Load the config file with the determined ID
+                    configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
+                        def config = readYaml file: env.CONFIG_FILE
+                        
+                        // Environment settings
+                        env.ENVIRONMENT     = config.environment.name
+                        env.NAMESPACE       = sh(script: 'git rev-parse --abbrev-ref HEAD | tr "[:upper:]" "[:lower:]"', returnStdout: true).trim()
+                        env.DEPLOY_SERVER   = config.environment.deploy_server
+                        env.HOST_USER       = config.environment.host_user
+                        env.SUDO_PASSWORD   = config.environment.sudo_password
+                        env.PORT            = config.environment.port.toString()
+                        env.WORKERS             = config.environment.workers.toString()
+                        env.URL                 = config.environment.url
+                        env.SSH_KNOWN_HOSTS     = config.environment.ssh_known_hosts
+
+                        env.ANSIBLE_PLAYBOOK    = config.environment.ansible_playbook
+                        env.ANSIBLE_INVENTORY   = config.environment.ansible_inventory
+
+                        env.APPLICATION         = config.environment.application
+                        env.SERVICE_REPLICAS    = config.environment.service_replicas
+                    
+                        
+                        // Docker configuration
+                        env.DOCKER_REGISTRY = config.docker.registry
+                        env.DOCKER_FOLDER   = config.docker.folder
+                        env.DOCKER_IMAGE    = config.docker.image
+                        env.DOCKER_REGISTRY_USER        = config.docker.registry_user
+                        env.DOCKER_REGISTRY_PASSWORD    = config.docker.registry_password
+                        
+                        // Authentication
+                        env.JWT_SECRET_KEY  = config.auth.jwt_secret_key
+                        env.JWT_REFRESH_SECRET_KEY = config.auth.jwt_refresh_secret_key
+                        
+                        // Main database
+                        env.DB_USER = config.database.user
+                        env.DB_PASS = config.database.password
+                        env.DB_HOST = config.database.host
+                        env.DB_PORT = config.database.port.toString()
+                        env.DB_NAME = config.database.name
+                        env.DB_DIALECT  = config.database.dialect
+                        env.DB_SSL      = config.database.ssl.toString()
+                                                
+                        // Telegram configuration
+                        env.TELEGRAM_BOT_TOKEN  = config.telegram.bot_token
+                        env.TELEGRAM_CHAT_ID    = config.telegram.chat_id
+                        
+                        // Display loaded configuration (except secrets)
+                        echo "Loaded configuration for ${ENV} environment"
+                        echo "Application: ${env.APPLICATION}"
+                        echo "Namespace: ${env.NAMESPACE}"
+                        echo "Deploy Server: ${env.DEPLOY_SERVER}"
                     }
                 }
             }
