@@ -34,7 +34,6 @@
 //     }
 // }
 
-
 pipeline {
     agent any
 
@@ -42,23 +41,20 @@ pipeline {
         stage('Load Config') {
             steps {
                 script {
-                    def configFileId = '221c9bb7-955e-4feb-9329-9e60b3399d33'  // folder-scoped ID
+                    def configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"
+                    echo "Using config file ID: ${configFileId}"
 
-                    echo "Loading config file with ID: ${configFileId}"
+                    configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
+                        // At this point, env.CONFIG_FILE contains the full path to the temp config file
+                        def configFilePath = env.CONFIG_FILE
+                        echo "Config file is at: ${configFilePath}"
 
-                    try {
-                        configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
-                            if (fileExists(env.CONFIG_FILE)) {
-                                echo "Config file found at ${env.CONFIG_FILE}"
-                                def config = readYaml file: env.CONFIG_FILE
-                                echo "Project name: ${config.PROJECT_NAME ?: 'NOT SET'}"
-                            } else {
-                                error "Config file not found at path: ${env.CONFIG_FILE}"
-                            }
+                        if (fileExists(configFilePath)) {
+                            def config = readYaml file: configFilePath
+                            echo "Loaded config. Project name: ${config.PROJECT_NAME ?: 'N/A'}"
+                        } else {
+                            error "Config file not found at path: ${configFilePath}"
                         }
-                    } catch (err) {
-                        echo "Error loading config file: ${err}"
-                        error "Failed to load folder-scoped config file. Make sure the job is inside the folder and fileId is correct."
                     }
                 }
             }
