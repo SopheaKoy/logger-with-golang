@@ -43,5 +43,7 @@ func LoadSettings() Setting {
 		DBSSL	: viper.GetString("DB_SSL"),
 		BotToken: viper.GetString("TELEGRAM_BOT_TOKEN"),
 		ChatID	: viper.GetString("TELEGRAM_CHAT_ID"),
+		API_PREFIX_V1 : viper.GetString("API_PREFIX_V1"),
+		API_PREFIX_V2 : viper.GetString("API_PREFIX_V2"),
 	}
 }
