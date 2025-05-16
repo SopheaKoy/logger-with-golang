@@ -41,7 +41,7 @@ pipeline {
         stage('Load Shared Managed Config') {
             steps {
                 script {
-                    configFileProvider([configFile(fileId: '221c9bb7-955e-4feb-9329-9e60b3399d33', variable: 'CONFIG_FILE')]) {
+                    configFileProvider([configFile(fileId: 'baefae44-c166-44dc-88b2-d9491ca9ace4', variable: 'CONFIG_FILE')]) {
                         echo "Config file path: ${env.CONFIG_FILE}"
 
                         if (fileExists(env.CONFIG_FILE)) {
