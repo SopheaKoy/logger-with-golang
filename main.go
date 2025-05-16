@@ -39,9 +39,7 @@ func main() {
 	db.InitDB()
 
 	// Create a new logger instance from your custom logger
-	log := config.NewLogger()
-
-	// Create log middleware instance with the logger
+	log 		  := config.NewLogger()
 	logMiddleware := middlewares.NewLogMiddleware(log)
 
 	// Create an instance of Fiber
