@@ -1,56 +1,53 @@
-// pipeline {
-//     agent any
-
-//     stages {
-//         stage('Load Configuration') {
-//             steps {
-//                 script {
-//                     def configFileId = ""
-
-//                     switch(env.BRANCH_NAME) {
-//                         case 'sophea':
-//                             configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  
-//                             break
-//                         default:
-//                             configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Default to Dev config
-//                             break
-//                     }
-
-//                     echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
-
-//                     configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
-//                         def config = readYaml file: env.CONFIG_FILE
-
-//                         env.PROJECT_NAME     = config.project_name
-
-//                         echo "Loaded configuration for ${env.ENVIRONMENT} environment"
-//                         echo "Application: ${env.APPLICATION}"
-//                         echo "Namespace: ${env.NAMESPACE}"
-//                         echo "Deploy Server: ${env.DEPLOY_SERVER}"
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
 pipeline {
     agent any
 
     stages {
-        stage('Load Shared Managed Config') {
+        stage('Load Configuration') {
             steps {
                 script {
-                    configFileProvider([configFile(fileId: 'baefae44-c166-44dc-88b2-d9491ca9ace4', variable: 'CONFIG_FILE')]) {
-                        echo "Config file path: ${env.CONFIG_FILE}"
+                    // Define the config file ID based on the branch
+                    def configFileId = ""
 
-                        if (fileExists(env.CONFIG_FILE)) {
-                            def config = readYaml file: env.CONFIG_FILE
-                            echo "Loaded config. Project name: ${config.environment?.project_name ?: 'N/A'}"
-                        } else {
-                            error "Config file not found at path: ${env.CONFIG_FILE}"
-                        }
+                    switch(env.BRANCH_NAME) {
+                        case 'sophea':
+                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Config file ID for sophea branch
+                            break
+                        default:
+                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Default config for other branches
+                            break
                     }
+
+                    echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
+
+                    // Load the configuration file
+                    configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE_PATH')]) {
+                        // Read and parse the YAML configuration file
+                        def config = readYaml file: env.CONFIG_FILE_PATH
+
+                        // Set environment variables from the YAML file content
+                        env.PROJECT_NAME = config.project_name
+                        env.APPLICATION = config.application
+                        env.NAMESPACE = config.namespace
+                        env.DEPLOY_SERVER = config.deploy_server
+                        env.ENVIRONMENT = config.environment  // Make sure to set this from the YAML
+
+                        // Echo the loaded environment variables for debugging purposes
+                        echo "Loaded configuration for ${env.ENVIRONMENT} environment"
+                        echo "Project: ${env.PROJECT_NAME}"
+                        echo "Application: ${env.APPLICATION}"
+                        echo "Namespace: ${env.NAMESPACE}"
+                        echo "Deploy Server: ${env.DEPLOY_SERVER}"
+                    }
+                }
+            }
+        }
+
+        // Add further stages for your pipeline, e.g., deploy, build, etc.
+        stage('Deploy') {
+            steps {
+                script {
+                    // Use the environment variables (e.g., deploy based on the environment)
+                    echo "Deploying ${env.APPLICATION} to ${env.NAMESPACE} on server ${env.DEPLOY_SERVER}"
                 }
             }
         }
