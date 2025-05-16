@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Use "folder-name/file-id" format
-                    def configFileId = "prod/221c9bb7-955e-4feb-9329-9e60b3399d33"
+                    def configFileId = "job/prod/221c9bb7-955e-4feb-9329-9e60b3399d33"
 
                     echo "Loading config from: ${configFileId}"
 
