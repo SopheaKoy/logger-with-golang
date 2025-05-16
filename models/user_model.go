@@ -29,13 +29,3 @@ the struct fields are set to their zero values (e.g., empty strings for strings,
 return:
 	The return keyword is used to return a value from a function. In this case, return &UserModel{} returns a pointer to the newly created UserModel instance.
 */
-
-func UserCreation(firstName, lastName, email, Password string) *UserModel {
-	return &UserModel{
-		ID			: uuid.New(),
-		FirstName	: firstName,
-		LastName	: lastName,
-		Email		: email,
-		Password	: Password,
-	}
-}
