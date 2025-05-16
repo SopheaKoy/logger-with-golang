@@ -37,23 +37,27 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'CONFIG_FILE_ID', defaultValue: '', description: 'Managed Config File ID')
+    }
+
     stages {
-        stage('Disable prod job in folder') {
+        stage('Load Shared Managed Config') {
             steps {
                 script {
-                    // Replace 'folder1/prod' with your actual folder and job name
-                    def jobPath = '/job/production/'
-                    def prodJob = Jenkins.instance.getItemByFullName(jobPath)
+                    if (!params.CONFIG_FILE_ID) {
+                        error "Missing CONFIG_FILE_ID parameter"
+                    }
 
-                    if (prodJob != null) {
-                        if (!prodJob.isDisabled()) {
-                            prodJob.disable()
-                            echo "Job '${jobPath}' has been disabled."
+                    configFileProvider([configFile(fileId: params.CONFIG_FILE_ID, variable: 'CONFIG_FILE')]) {
+                        echo "Config file path: ${env.CONFIG_FILE}"
+
+                        if (fileExists(env.CONFIG_FILE)) {
+                            def config = readYaml file: env.CONFIG_FILE
+                            echo "Loaded config. Project name: ${config.PROJECT_NAME ?: 'N/A'}"
                         } else {
-                            echo "Job '${jobPath}' is already disabled."
+                            error "Config file not found at path: ${env.CONFIG_FILE}"
                         }
-                    } else {
-                        error("Job '${jobPath}' not found.")
                     }
                 }
             }
