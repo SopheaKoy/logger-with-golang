@@ -13,7 +13,7 @@ import (
 
 	"logger/config"
 
-	schema "logger/schemas"
+	schema "logger/ent/schema"
 )
 
 // LogMiddleware struct that holds the Logger and MaintenanceMode

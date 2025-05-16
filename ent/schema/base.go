@@ -17,17 +17,17 @@ type IResponseBase struct {
 	Success int         `json:"success"`
 	Code    string      `json:"code"`
 	Message string      `json:"message"`
-	Data    interface{} `json:"data,omitempty"` // Can hold any type of data
+	Data    interface{} `json:"data,omitempty"`
 }
 
 // NewIResponseBase creates a new IResponseBase with a generated UUID for log_id and default values for success and message.
 func NewIResponseBase(code, message string, data interface{}) *IResponseBase {
 	return &IResponseBase{
-		LogID:   generateUUID(),
-		Success: 1,
-		Code:    code,
-		Message: message,
-		Data:    data,
+		LogID	: generateUUID(),
+		Success	: 1,
+		Code	: code,
+		Message	: message,
+		Data	: data,
 	}
 }
 
