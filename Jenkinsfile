@@ -35,45 +35,30 @@
 // }
 
 
- pipeline {
+pipeline {
     agent any
 
     stages {
-        stage('Load Configuration') {
+        stage('Load Config') {
             steps {
                 script {
-                    // Set your config file ID
-                    def configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"
-                    echo "Looking for config file with ID: ${configFileId}"
+                    def configFileId = '221c9bb7-955e-4feb-9329-9e60b3399d33'  // folder-scoped ID
+
+                    echo "Loading config file with ID: ${configFileId}"
 
                     try {
-                        // Attempt to load config file using Config File Provider
                         configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
-                            def configFilePath = env.CONFIG_FILE
-                            
-                            if (fileExists(configFilePath)) {
-                                echo "✅ Successfully loaded config file at: ${configFilePath}"
-
-                                def config = readYaml file: configFilePath
-                                
-                                // Example usage of a config property
-                                if (config.PROJECT_NAME) {
-                                    echo "Project Name: ${config.PROJECT_NAME}"
-                                } else {
-                                    echo "⚠️ PROJECT_NAME is not defined in the config file."
-                                }
-
+                            if (fileExists(env.CONFIG_FILE)) {
+                                echo "Config file found at ${env.CONFIG_FILE}"
+                                def config = readYaml file: env.CONFIG_FILE
+                                echo "Project name: ${config.PROJECT_NAME ?: 'NOT SET'}"
                             } else {
-                                error "❌ Config file not found at path: ${configFilePath}. Check file ID and folder scope."
+                                error "Config file not found at path: ${env.CONFIG_FILE}"
                             }
                         }
-                    } catch (Exception e) {
-                        echo "❌ Exception while accessing config file: ${e}"
-                        echo "➡️ Possible reasons:"
-                        echo " - Wrong config file ID"
-                        echo " - File is scoped to a different folder"
-                        echo " - File was deleted"
-                        error "🚨 Failed to load config file. See above for details."
+                    } catch (err) {
+                        echo "Error loading config file: ${err}"
+                        error "Failed to load folder-scoped config file. Make sure the job is inside the folder and fileId is correct."
                     }
                 }
             }
