@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/swagger"
 
 	"logger/db"
@@ -54,6 +55,14 @@ func main() {
 		Title:       "Logger Service",
 		URL:         "/swagger/doc.json",
 		DeepLinking: true,
+	}))
+
+	// CORS middleware setup (allow all origins)
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*", // Allow all origins (or specify a list of allowed origins)
+		AllowMethods: "GET,POST,PUT,DELETE", // Allow all HTTP methods
+		AllowHeaders: "*", // Allow all headers
+		AllowCredentials: true,
 	}))
 
 	// Apply the logging middleware

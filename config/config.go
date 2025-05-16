@@ -16,24 +16,32 @@ type Setting struct {
 	DBSSL    string
 	BotToken string
 	ChatID   string
+
+	API_PREFIX_V1 string
+	API_PREFIX_V2 string
 }
 
 func LoadSettings() Setting {
 	viper.SetConfigFile(".env")
 	viper.SetConfigType("env")
-	viper.ReadInConfig()
+
+	viper.SetDefault("API_PREFIX_V1", "/api/v1")
+	viper.SetDefault("API_PREFIX_V2", "/api/v2")
+
+	// Load .env if exisclear
+	_ = viper.ReadInConfig()
 	viper.AutomaticEnv()
 
 	return Setting{
-		Port:     viper.GetString("PORT"),
-		Env:      viper.GetString("ENV"),
-		DBPort:   viper.GetString("DB_PORT"),
-		DBHost:   viper.GetString("DB_HOST"),
-		DBUser:   viper.GetString("DB_USER"),
-		DBPass:   viper.GetString("DB_PASS"),
-		DBName:   viper.GetString("DB_NAME"),
-		DBSSL:    viper.GetString("DB_SSL"),
+		Port	: viper.GetString("PORT"),
+		Env		: viper.GetString("ENV"),
+		DBPort	: viper.GetString("DB_PORT"),
+		DBHost	: viper.GetString("DB_HOST"),
+		DBUser	: viper.GetString("DB_USER"),
+		DBPass	: viper.GetString("DB_PASS"),
+		DBName	: viper.GetString("DB_NAME"),
+		DBSSL	: viper.GetString("DB_SSL"),
 		BotToken: viper.GetString("TELEGRAM_BOT_TOKEN"),
-		ChatID:   viper.GetString("TELEGRAM_CHAT_ID"),
+		ChatID	: viper.GetString("TELEGRAM_CHAT_ID"),
 	}
 }
