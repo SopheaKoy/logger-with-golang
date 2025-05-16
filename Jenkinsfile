@@ -46,7 +46,7 @@ pipeline {
 
                         if (fileExists(env.CONFIG_FILE)) {
                             def config = readYaml file: env.CONFIG_FILE
-                            echo "Loaded config. Project name: ${config.env.project_name ?: 'N/A'}"
+                            echo "Loaded config. Project name: ${config.environment?.project_name ?: 'N/A'}"
                         } else {
                             error "Config file not found at path: ${env.CONFIG_FILE}"
                         }
