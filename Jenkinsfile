@@ -5,7 +5,7 @@ pipeline {
         stage('Load Configuration') {
             steps {
                 script {
-                    def configFileId = "/job/production/configfiles/c5560f0a-c718-4a62-bfbc-736d8ca54674"
+                    def configFileId = "/job/production/configfiles/221c9bb7-955e-4feb-9329-9e60b3399d33"
 
                     echo "Attempting to load config file ID: ${configFileId}"
 
