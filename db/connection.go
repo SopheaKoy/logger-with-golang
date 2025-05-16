@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"time"
 
 	setting "logger/config"
 
@@ -37,7 +38,7 @@ var (
 // InitDB initializes the DB connection from env or .env file
 func InitDB() {
 	// call config
-	s :=setting.LoadSettings()
+	s := setting.LoadSettings()
 
 	// Read DB configuration
 	db = DBSettings{
@@ -54,17 +55,31 @@ func InitDB() {
 		db.Host, db.Port, db.User, db.Password, db.Name, db.SSLMode,
 	)
 
-	fmt.Println(dsn)
-
 	var err error
 	DB, err = sql.Open("postgres", dsn)
 	if err != nil {
 		log.Fatalf("❌ Error opening DB: %v", err)
 	}
 
-	if err = DB.Ping(); err != nil {
-		log.Fatalf("❌ Error pinging DB: %v", err)
+	// Configure connection pool
+	DB.SetMaxOpenConns(25)                 // Maximum number of open connections
+	DB.SetMaxIdleConns(5)                  // Maximum number of idle connections
+	DB.SetConnMaxLifetime(5 * time.Minute) // Maximum lifetime of a connection
+	DB.SetConnMaxIdleTime(1 * time.Minute) // Maximum idle time of a connection
+
+	// Try to connect with retries
+	maxRetries := 5
+	for i := 0; i < maxRetries; i++ {
+		err = DB.Ping()
+		if err == nil {
+			log.Printf("✅ Database connection established (SSL Mode: %s)", db.SSLMode)
+			return
+		}
+		log.Printf("⚠️ Attempt %d/%d: Failed to connect to database: %v", i+1, maxRetries, err)
+		if i < maxRetries-1 {
+			time.Sleep(time.Second * time.Duration(i+1)) // Exponential backoff
+		}
 	}
 
-	log.Println("✅ Database connection established")
+	log.Fatalf("❌ Failed to connect to database after %d attempts", maxRetries)
 }

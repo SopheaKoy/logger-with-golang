@@ -503,3 +503,52 @@
 2025-05-14 22:35:13,149 - info - info - [94mStarting server on port 3000...[0m
 2025-05-14 23:19:56,646 - info - info - [94mStarting server on port 3000...[0m
 2025-05-14 23:20:38,124 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:04,527 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:44,398 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:52,730 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:57,713 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:58,630 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:52:59,589 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:53:00,624 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:54:31,595 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:55:00,721 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:55:06,590 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:55:21,991 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:55:26,995 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:58:03,591 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 11:58:12,414 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 12:02:34,145 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:26:55,617 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:36:06,726 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:36:32,093 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:36:33,228 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:36:39,112 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:39:34,382 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:39:36,388 - error - error - [91mGET / - 404 - 0.02 ms | Body: [0m
+2025-05-16 13:39:36,417 - error - error - [91mGET /favicon.ico - 404 - 0.01 ms | Body: [0m
+2025-05-16 13:39:40,753 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:42,406 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:40:43,789 - info - info - [94mGET /api/v1/public - 200 - 0.01 ms | Body: [0m
+2025-05-16 13:40:44,541 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:45,068 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:45,312 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:45,536 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:45,737 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:45,955 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:46,150 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:48,394 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:53,336 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:54,640 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:56,099 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:57,462 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:40:59,328 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:41:07,773 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:41:07,958 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 13:41:33,860 - info - info - [94mGET /api/v1/user - 200 - 1760.81 ms | Body: [0m
+2025-05-16 13:41:46,615 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:44:02,632 - info - info - [94mGET /api/v1/user - 200 - 998.70 ms | Body: [0m
+2025-05-16 13:44:16,888 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:50:59,103 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 13:51:07,387 - error - error - [91mGET /api/v1/users - 404 - 0.01 ms | Body: [0m
+2025-05-16 13:51:11,511 - info - info - [94mGET /api/v1/user - 200 - 959.37 ms | Body: [0m
+2025-05-16 13:52:41,685 - info - info - [94mStarting server on port 3000...[0m

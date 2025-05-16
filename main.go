@@ -10,23 +10,22 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/swagger"
 
-	"logger/handler/auth"
-
 	"logger/db"
+	"logger/handler/auth"
+	schema "logger/schemas"
+	notification "logger/util"
 )
 
 type CreatePublicRequest struct {
-    Name        string `json:"name" example:"Resource name"`
-    Description string `json:"description" example:"Resource description"`
+	Name        string `json:"name" example:"Resource name"`
+	Description string `json:"description" example:"Resource description"`
 }
 
 // ErrorResponse represents an error response
 type ErrorResponse struct {
-    Message string `json:"message" example:"Error message"`
-    Code    int    `json:"code" example:"400"`
+	Message string `json:"message" example:"Error message"`
+	Code    int    `json:"code" example:"400"`
 }
-// #======================== 
-
 
 // @title My API
 // @version 1.0
@@ -39,7 +38,7 @@ func main() {
 	db.InitDB()
 
 	// Create a new logger instance from your custom logger
-	log 		  := config.NewLogger()
+	log := config.NewLogger()
 	logMiddleware := middlewares.NewLogMiddleware(log)
 
 	// Create an instance of Fiber
@@ -52,13 +51,12 @@ func main() {
 
 	// Configure Swagger
 	app.Get("/swagger/*", swagger.New(swagger.Config{
-		Title		: "Logger Service",		
-		URL			: "/swagger/doc.json",
-		DeepLinking	: true,
+		Title:       "Logger Service",
+		URL:         "/swagger/doc.json",
+		DeepLinking: true,
 	}))
 
 	// #=================== swagger configuration
-
 
 	// Apply the logging middleware
 	app.Use(logMiddleware.LogAccess())
@@ -70,9 +68,7 @@ func main() {
 	apiPrefix.Get("/public", publicHandler)
 	apiPrefix.Post("/public", publicCreationHandler)
 
-
 	apiPrefix.Get("/user", userHandler)
-
 
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
 
@@ -84,7 +80,6 @@ func main() {
 		log.Error().Error("Failed to start server:", err)
 	}
 }
-
 
 // @Summary Public route
 // @Description This is a public route that is accessible by everyone
@@ -107,14 +102,21 @@ func publicHandler(c *fiber.Ctx) error {
 // @Failure 500 {object} ErrorResponse "Server error"
 // @Router /public [post]
 func publicCreationHandler(c *fiber.Ctx) error {
-    // Your implementation here
-    return c.Status(fiber.StatusCreated).SendString("Hello, Public Page....!!!")
+	// Your implementation here
+	return c.Status(fiber.StatusCreated).SendString("Hello, Public Page....!!!")
 }
 
 // @Tags User
 // @Router /user [get]
 func userHandler(c *fiber.Ctx) error {
-	return c.SendString("Hello, Public Page....!!!")
+	// send notify
+	notification.SendTelegramMessage("Send the message here...!!!")
+	return c.Status(fiber.StatusOK).JSON(
+		schema.IResponseBase{
+			Code: "200",
+			Data: "Getting start call ther user....!!!",
+		},
+	)
 }
 
 // fileHandler handles file uploads.

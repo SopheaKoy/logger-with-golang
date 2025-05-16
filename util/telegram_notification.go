@@ -53,7 +53,7 @@ func SendTelegramMessage(message string) error {
 		Text:      message,
 		ParseMode: "HTML", // Enable HTML formatting if needed, can be removed
 	}
-	
+
 	// Marshal the payload to JSON
 	jsonPayload, err := json.Marshal(msgReq)
 	if err != nil {
@@ -63,7 +63,7 @@ func SendTelegramMessage(message string) error {
 
 	// Prepare the request URL
 	url := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", botToken)
-	
+
 	// Create a new request
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonPayload))
 	if err != nil {
@@ -95,11 +95,11 @@ func SendTelegramMessage(message string) error {
 
 	// Log success for successful requests
 	log.Println("Message successfully sent to Telegram!")
-	
+
 	// Optionally log the response for debugging
 	if viper.GetBool("DEBUG") {
 		log.Printf("Telegram API response: %s", respBody)
 	}
-	
+
 	return nil
 }
