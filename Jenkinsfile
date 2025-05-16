@@ -5,12 +5,14 @@ pipeline {
         stage('Load Configuration') {
             steps {
                 script {
-                    def configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Config file ID from the global config
+                    def configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Your global config file ID
 
                     echo "Attempting to load config file ID: ${configFileId}"
 
-                    // Load the configuration file using Config File Provider
+                    // Use the Config File Provider plugin to load the configuration
                     configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE_PATH')]) {
+                        echo "Configuration file loaded successfully."
+
                         // Ensure the config file exists before proceeding
                         if (!fileExists(env.CONFIG_FILE_PATH)) {
                             error "Config file not found: ${env.CONFIG_FILE_PATH}. Please verify the config file ID and ensure the file exists."
