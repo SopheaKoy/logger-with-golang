@@ -552,3 +552,91 @@
 2025-05-16 13:51:07,387 - error - error - [91mGET /api/v1/users - 404 - 0.01 ms | Body: [0m
 2025-05-16 13:51:11,511 - info - info - [94mGET /api/v1/user - 200 - 959.37 ms | Body: [0m
 2025-05-16 13:52:41,685 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:18:05,925 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:21:13,105 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:21:14,785 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:22:52,833 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:23:00,750 - error - error - [91mGET /v1/hello - 404 - 0.10 ms | Body: [0m
+2025-05-16 23:23:05,771 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:24:05,629 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:24:23,598 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:24:53,840 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:11,646 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:24,268 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:25:26,597 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:41,183 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:41,880 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:42,321 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:42,782 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:42,960 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,161 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,334 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,491 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,671 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,827 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:43,960 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:44,076 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:44,245 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:44,357 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:44,788 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:44,907 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:45,112 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:25:45,303 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:15,374 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:16,107 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:16,480 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:16,749 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:17,357 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:17,589 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:17,821 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:18,094 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:26:25,715 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:26:27,691 - error - error - [91mGET /api/v1/public - 405 - 0.16 ms | Body: [0m
+2025-05-16 23:27:18,012 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:19,663 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:21,603 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:21,736 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:21,813 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:22,006 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:22,145 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:22,268 - error - error - [91mGET /api/v1/public - 405 - 0.03 ms | Body: [0m
+2025-05-16 23:27:22,401 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:22,538 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:22,671 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:22,789 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:22,939 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,082 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:23,231 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,356 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,489 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,614 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,738 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:23,873 - error - error - [91mGET /api/v1/public - 405 - 0.04 ms | Body: [0m
+2025-05-16 23:27:23,984 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:24,123 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:24,244 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:24,363 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:24,489 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:24,617 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:24,755 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:24,888 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:25,047 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:25,195 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:25,326 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:25,463 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:27:25,605 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:25,754 - error - error - [91mGET /api/v1/public - 405 - 0.04 ms | Body: [0m
+2025-05-16 23:27:25,884 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:26,066 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:26,248 - error - error - [91mGET /api/v1/public - 405 - 0.01 ms | Body: [0m
+2025-05-16 23:27:26,947 - error - error - [91mGET /api/v1/public - 405 - 0.02 ms | Body: [0m
+2025-05-16 23:29:19,828 - info - info - [94mStarting server on port 3000...[0m
+2025-05-16 23:29:20,007 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:20,523 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:21,052 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:21,244 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:21,581 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:22,103 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:22,223 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:22,632 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-16 23:29:22,760 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m

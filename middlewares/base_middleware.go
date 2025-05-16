@@ -79,6 +79,8 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 			method, url, statusCode, durationInMs, body,
 		)
 
+		fmt.Println("LOGGER FROM MIDDLEWARE=", logEntry)
+
 		if c.Method() != fiber.MethodOptions {
 			if err != nil || statusCode >= 400 {
 				lm.Logger.Error().Error(logEntry)

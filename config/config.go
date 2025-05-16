@@ -19,6 +19,8 @@ type Setting struct {
 
 	API_PREFIX_V1 string
 	API_PREFIX_V2 string
+
+	CORS_ALLOWED_ORIGINS string
 }
 
 func LoadSettings() Setting {
@@ -27,6 +29,7 @@ func LoadSettings() Setting {
 
 	viper.SetDefault("API_PREFIX_V1", "/api/v1")
 	viper.SetDefault("API_PREFIX_V2", "/api/v2")
+	viper.SetDefault("CORS_ALLOWED_ORIGINS", "*")
 
 	// Load .env if exisclear
 	_ = viper.ReadInConfig()
@@ -45,5 +48,6 @@ func LoadSettings() Setting {
 		ChatID	: viper.GetString("TELEGRAM_CHAT_ID"),
 		API_PREFIX_V1 : viper.GetString("API_PREFIX_V1"),
 		API_PREFIX_V2 : viper.GetString("API_PREFIX_V2"),
+		CORS_ALLOWED_ORIGINS: viper.GetString("CORS_ALLOWED_ORIGINS"),
 	}
 }

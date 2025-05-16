@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"logger/config"
 	_ "logger/docs"
 	"logger/middlewares"
 	"os"
@@ -11,6 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/swagger"
 
+	config "logger/config"
 	"logger/db"
 	"logger/handler/auth"
 	schema "logger/schemas"
@@ -47,7 +47,6 @@ func main() {
 		StrictRouting: true,
 	})
 
-	// #=================== swagger configuration
 	app.Get("/swagger/*", swagger.HandlerDefault)
 
 	// Configure Swagger
@@ -59,24 +58,21 @@ func main() {
 
 	// CORS middleware setup (allow all origins)
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "*", // Allow all origins (or specify a list of allowed origins)
-		AllowMethods: "GET,POST,PUT,DELETE", // Allow all HTTP methods
-		AllowHeaders: "*", // Allow all headers
-		AllowCredentials: true,
+		AllowOrigins: config.LoadSettings().CORS_ALLOWED_ORIGINS,
+		AllowMethods: "GET,POST,PUT,DELETE",
+		AllowHeaders: "*",
+		AllowCredentials: false,
 	}))
 
 	// Apply the logging middleware
 	app.Use(logMiddleware.LogAccess())
 
 	// Add group API with /api/v1 prefix
-	apiPrefix := app.Group("/api/v1")
-
-	// #================ call handler
+	apiPrefix := app.Group(config.LoadSettings().API_PREFIX_V1)
+	
 	apiPrefix.Get("/public", publicHandler)
 	apiPrefix.Post("/public", publicCreationHandler)
-
 	apiPrefix.Get("/user", userHandler)
-
 	apiPrefix.Post("/upload", auth.TokenAuthMiddleware(), fileHandler)
 
 	// Log the starting message
