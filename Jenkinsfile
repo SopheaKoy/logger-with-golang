@@ -38,22 +38,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Load Config') {
+        stage('Load Shared Managed Config') {
             steps {
                 script {
+                    // Replace with your actual managed config file ID
                     def configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"
-                    echo "Using config file ID: ${configFileId}"
 
                     configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
-                        // At this point, env.CONFIG_FILE contains the full path to the temp config file
-                        def configFilePath = env.CONFIG_FILE
-                        echo "Config file is at: ${configFilePath}"
+                        echo "Config file path: ${env.CONFIG_FILE}"
 
-                        if (fileExists(configFilePath)) {
-                            def config = readYaml file: configFilePath
+                        if (fileExists(env.CONFIG_FILE)) {
+                            def config = readYaml file: env.CONFIG_FILE
                             echo "Loaded config. Project name: ${config.PROJECT_NAME ?: 'N/A'}"
                         } else {
-                            error "Config file not found at path: ${configFilePath}"
+                            error "Config file not found at path: ${env.CONFIG_FILE}"
                         }
                     }
                 }
@@ -61,3 +59,4 @@ pipeline {
         }
     }
 }
+
