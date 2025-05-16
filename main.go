@@ -56,15 +56,13 @@ func main() {
 		DeepLinking: true,
 	}))
 
-	// #=================== swagger configuration
-
 	// Apply the logging middleware
 	app.Use(logMiddleware.LogAccess())
 
 	// Add group API with /api/v1 prefix
 	apiPrefix := app.Group("/api/v1")
 
-	// #================ call habdler
+	// #================ call handler
 	apiPrefix.Get("/public", publicHandler)
 	apiPrefix.Post("/public", publicCreationHandler)
 
@@ -158,7 +156,7 @@ func fileHandler(c *fiber.Ctx) error {
 
 	// Success response
 	return c.JSON(fiber.Map{
-		"message": "Upload successful",
-		"file":    fileHeader.Filename,
+		"message"	: "Upload successful",
+		"file"		: fileHeader.Filename,
 	})
 }
