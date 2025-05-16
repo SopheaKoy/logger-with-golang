@@ -12,7 +12,7 @@ pipeline {
                             configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  
                             break
                         default:
-                            configFileId = "65ce3b9e-b918-4ee8-a23e-7f5239aeb2ee"  // Default to Dev config
+                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"  // Default to Dev config
                             break
                     }
 
