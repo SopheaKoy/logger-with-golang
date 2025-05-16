@@ -36,20 +36,12 @@
 
 pipeline {
     agent any
-
-    parameters {
-        string(name: 'CONFIG_FILE_ID', defaultValue: '221c9bb7-955e-4feb-9329-9e60b3399d33', description: 'Managed Config File ID')
-    }
-
+    
     stages {
         stage('Load Shared Managed Config') {
             steps {
                 script {
-                    if (!params.CONFIG_FILE_ID) {
-                        error "Missing CONFIG_FILE_ID parameter"
-                    }
-
-                    configFileProvider([configFile(fileId: params.CONFIG_FILE_ID, variable: 'CONFIG_FILE')]) {
+                    configFileProvider([configFile(fileId: '221c9bb7-955e-4feb-9329-9e60b3399d33', variable: 'CONFIG_FILE')]) {
                         echo "Config file path: ${env.CONFIG_FILE}"
 
                         if (fileExists(env.CONFIG_FILE)) {
