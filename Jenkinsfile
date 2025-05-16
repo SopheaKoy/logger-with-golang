@@ -38,7 +38,7 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'CONFIG_FILE_ID', defaultValue: '', description: 'Managed Config File ID')
+        string(name: 'CONFIG_FILE_ID', defaultValue: '221c9bb7-955e-4feb-9329-9e60b3399d33', description: 'Managed Config File ID')
     }
 
     stages {
