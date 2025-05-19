@@ -33,10 +33,16 @@ pipeline {
         }
 
         stage('Deployment') {
-            steps {
-                script {
-                    echo "DEPLOYMENT ECHO =================================="
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
                 }
+            }
+            steps {
+                echo "Deploying branch ${env.BRANCH_NAME}"
             }
         }
     }
