@@ -1,7 +1,29 @@
 pipeline {
     agent any
 
-    stages {
+
+    environment {
+        MY_SECRET_FILE = credentials('dev_secret_file')  // use the ID you gave
+    }
+
+    steps {
+        stage('Use Secret File') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
+            steps {
+                script {
+                    echo "Using secret file path: ${env.MY_SECRET_FILE}"
+                    sh 'cat $MY_SECRET_FILE'  // Example: print the file content
+                }
+            }
+        }
+
 
         stage('Use Config File') {
             when {
