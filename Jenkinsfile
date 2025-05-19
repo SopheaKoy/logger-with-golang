@@ -3,6 +3,14 @@ pipeline {
 
     stages {
         stage('Load Configuration') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
             steps {
                 script {
                     
