@@ -25,15 +25,30 @@ pipeline {
                         echo "Error listing config files: ${e.message}"
                     }
                     def configFileId = ""
+
                     switch(env.BRANCH_NAME) {
-                        case 'sophea':
+                        case 'dev':
                             configFileId = "dev/221c9bb7-955e-4feb-9329-9e60b3399d33"
+                            break
+                        case 'prod':
+                            // Optional: Skip or assign different config
+                            configFileId = "prod/b3a77caf-e908-4e73-a342-1ba1b8621edf"
                             break
                         default:
                             configFileId = "dev/221c9bb7-955e-4feb-9329-9e60b3399d33"
                             break
                     }
+
                     echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
+
+                    if (configFileId?.trim()) {
+                        configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
+                            def config = readYaml file: CONFIG_FILE
+                            echo "Loaded config: ${config}"
+                        }
+                    } else {
+                        echo "No config file ID defined for branch: ${env.BRANCH_NAME}. Skipping config loading."
+                    }
 
                     // Load the config file with the determined ID
                     configFileProvider([configFile(fileId: configFileId, variable: 'CONFIG_FILE')]) {
