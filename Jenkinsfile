@@ -23,4 +23,26 @@ pipeline {
             }
         }
     }
+
+    stage('Read Config') {
+        when {
+            anyOf {
+                branch 'main'
+                branch 'sophea'
+                branch 'dev'
+                branch 'staging'
+            }
+        }
+        steps {
+            script {
+                def yamlText = readFile("${CONFIG_FILE}")
+                def config   = readYaml text: yamlText
+                def port     = config.env.port
+                def envName  = config.env.env
+
+                echo "App Port: ${port}"
+                echo "Environment: ${envName}"  // Be careful not to echo secrets
+            }
+        }
+    }
 }
