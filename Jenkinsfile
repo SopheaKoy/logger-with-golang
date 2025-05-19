@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MY_SECRET_FILE = credentials('dev_credetial')
+        MY_SECRET_FILE = credentials('85da67ed-e8af-4b0b-991a-44e2a306fead')
     }
 
     stages {
@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     echo "Using secret file path: ${env.MY_SECRET_FILE}"
-                    sh 'cat $MY_SECRET_FILE'  // print secret file content
+                    sh 'cat $MY_SECRET_FILE'
                 }
             }
         }
