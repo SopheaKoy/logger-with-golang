@@ -3,7 +3,7 @@ pipeline {
 
 
     environment {
-        MY_SECRET_FILE = credentials('dev_secret_file')  // use the ID you gave
+        MY_SECRET_FILE = credentials('dev_credetial')
     }
 
     steps {
