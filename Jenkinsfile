@@ -6,7 +6,25 @@ pipeline {
     }
 
     stages {
-        
+
+
+        stage('Use Secret File') {
+            steps {
+                // withCredentials exposes the secret file path as an environment variable
+                withCredentials([file(credentialsId: 'dev_secret_file', variable: 'SECRET_FILE_PATH')]) {
+                    script {
+                        echo "Secret file path: ${env.SECRET_FILE_PATH}"
+
+                         // Read YAML content from the secret file
+                        def secretConfig = readYaml file: env.SECRET_YAML
+                        
+                        // Example: print first 5 lines of the secret file (do NOT print secrets in real logs!)
+                        sh 'head -n 5 "$SECRET_FILE_PATH"'
+                    }
+                }
+            }
+        }
+
         stage('Secret') {
             
             when {
