@@ -9,9 +9,9 @@ pipeline {
         stage('Print YAML Content') {
             when {
                 anyOf {
-                    branch 'main'
                     branch 'sophea'
                     branch 'dev' 
+                    branch 'uat'
                 }
             }
             steps {
@@ -25,15 +25,15 @@ pipeline {
         stage('Read Config') {
             when {
                 anyOf {
-                    branch 'main'
                     branch 'sophea'
                     branch 'dev'
+                    branch 'uat'
                 }
             }
             steps {
                 script {
                     def yamlText = readFile(env.MY_CONFIG)
-                    def config = readYaml text: yamlText
+                    def config   = readYaml text: yamlText
 
                     // Access values from YAML
                     def PORT = config.env.port
