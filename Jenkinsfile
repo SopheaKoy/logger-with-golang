@@ -40,11 +40,11 @@ pipeline {
                     def config = readYaml text: yamlText
 
                     // Access values from YAML
-                    def port = config.env.port
-                    def envName = config.env.env
+                    def PORT = config.env.port
+                    def ENV = config.env.env
 
-                    echo "App Port: ${port}"
-                    echo "Environment: ${envName}"
+                    echo "App Port: ${PORT}"
+                    echo "Environment: ${ENV}"
                 }
             }
         }
