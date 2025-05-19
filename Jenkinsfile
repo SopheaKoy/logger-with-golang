@@ -6,15 +6,15 @@ pipeline {
     }
 
     stages {
-        when {
-            anyOf {
-                branch 'main'
-                branch 'sophea'
-                branch 'dev'
-                branch 'staging'
-            }
-        }
         stage('Print YAML Content') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
             steps {
                 script {
                     echo "Secret file is stored at: ${env.MY_CONFIG}"
