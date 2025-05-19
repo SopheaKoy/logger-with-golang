@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MY_CONFIG = credentials('85da67ed-e8af-4b0b-991a-44e2a306fead')
+        MY_CONFIG = credentials('85da67ed-e8af-4b0b-991a-44e2a306fead') // Secret file credential ID
     }
 
     stages {
@@ -17,8 +17,9 @@ pipeline {
             }
             steps {
                 script {
-                    echo "Secret file is stored at: ${env.MY_CONFIG}"
-                    sh 'cat $MY_CONFIG'  // Shows the file contents
+                    echo 'Reading secret config file...'
+                    // You can show it if it's safe, but usually avoid printing secrets
+                    sh 'cat "$MY_CONFIG"'
                 }
             }
         }
@@ -34,13 +35,16 @@ pipeline {
             }
             steps {
                 script {
-                    def yamlText = readFile("${CONFIG_FILE}")
-                    def config   = readYaml text: yamlText
-                    def port     = config.env.port
-                    def envName  = config.env.env
+                    // Read YAML file from secret file path
+                    def yamlText = readFile(env.MY_CONFIG)
+                    def config = readYaml text: yamlText
+
+                    // Access values from YAML
+                    def port = config.env.port
+                    def envName = config.env.env
 
                     echo "App Port: ${port}"
-                    echo "Environment: ${envName}"  // Be careful not to echo secrets
+                    echo "Environment: ${envName}"
                 }
             }
         }
