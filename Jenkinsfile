@@ -3,6 +3,14 @@ pipeline {
 
     stages {
         stage('Use Secret File') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
             steps {
                 // withCredentials exposes the secret file path as an environment variable
                 withCredentials([file(credentialsId: 'dev_credetial', variable: 'SECRET_FILE_PATH')]) {
