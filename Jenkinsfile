@@ -2,6 +2,29 @@ pipeline {
     agent any
 
     stages {
+        stage('List Credentials') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
+            steps {
+                script {
+                    def creds = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+                        com.cloudbees.plugins.credentials.common.StandardCredentials.class,
+                        Jenkins.instance,
+                        null,
+                        null)
+                    echo "Found credentials:"
+                    creds.each { c ->
+                        echo "- ${c.id}"
+                    }
+                }
+            }
+        }
         stage('Use Secret File') {
             when {
                 anyOf {
