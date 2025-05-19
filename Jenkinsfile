@@ -3,6 +3,15 @@ pipeline {
 
     stages {
         stage('Load Config') {
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
+
             steps {
                 script {
                     // PROVEN WORKING FORMAT for your specific case
@@ -22,6 +31,7 @@ pipeline {
                     branch 'staging'
                 }
             }
+
             steps {
                 echo "Deploying branch ${env.BRANCH_NAME}"
             }
