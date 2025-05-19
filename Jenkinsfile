@@ -13,9 +13,8 @@ pipeline {
                 }
             }
             steps {
-                configFileProvider([configFile(fileId: '221c9bb7-955e-4feb-9329-9e60b3399d33', variable: 'CONFIG_FILE')]) {
+                configFileProvider([configFile(fileId: 'b3a77caf-e908-4e73-a342-1ba1b8621edf', variable: 'CONFIG_FILE')]) {
                     sh 'cat $CONFIG_FILE'
-                    // use your config file here
                 }
             }
         }
