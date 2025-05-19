@@ -1,12 +1,11 @@
 pipeline {
     agent any
 
-
     environment {
         MY_SECRET_FILE = credentials('dev_credetial')
     }
 
-    steps {
+    stages {
         stage('Use Secret File') {
             when {
                 anyOf {
@@ -19,11 +18,10 @@ pipeline {
             steps {
                 script {
                     echo "Using secret file path: ${env.MY_SECRET_FILE}"
-                    sh 'cat $MY_SECRET_FILE'  // Example: print the file content
+                    sh 'cat $MY_SECRET_FILE'  // print secret file content
                 }
             }
         }
-
 
         stage('Use Config File') {
             when {
