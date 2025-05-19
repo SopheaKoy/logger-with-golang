@@ -1,13 +1,7 @@
 pipeline {
     agent any
 
-    environment {
-        MY_SECRET = credentials('dev_credetial')
-    }
-
     stages {
-
-
         stage('Use Secret File') {
             steps {
                 // withCredentials exposes the secret file path as an environment variable
@@ -21,24 +15,6 @@ pipeline {
                         // Example: print first 5 lines of the secret file (do NOT print secrets in real logs!)
                         sh 'head -n 5 "$SECRET_FILE_PATH"'
                     }
-                }
-            }
-        }
-
-        stage('Secret') {
-            
-            when {
-                anyOf {
-                    branch 'main'
-                    branch 'sophea'
-                    branch 'dev'
-                    branch 'staging'
-                }
-            }
-            steps {
-                script {
-                    echo "secret ......!!!"
-                    echo "Using secret in folder: ${env.MY_SECRET}"
                 }
             }
         }
