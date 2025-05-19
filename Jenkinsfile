@@ -1,7 +1,30 @@
 pipeline {
     agent any
 
+    environment {
+        MY_SECRET = credentials('dev_credetial')
+    }
+
     stages {
+        
+        stage('Secret') {
+            
+            when {
+                anyOf {
+                    branch 'main'
+                    branch 'sophea'
+                    branch 'dev'
+                    branch 'staging'
+                }
+            }
+            steps {
+                script {
+                    echo "secret ......!!!"
+                    echo "Using secret in folder: ${env.MY_SECRET}"
+                }
+            }
+        }
+
         stage('Load Configuration') {
             when {
                 anyOf {
