@@ -5,8 +5,6 @@ pipeline {
         stage('Load Config') {
             when {
                 anyOf {
-                    branch 'main'
-                    branch 'sophea'
                     branch 'dev'
                     branch 'staging'
                 }
@@ -25,8 +23,6 @@ pipeline {
         stage('Deployment') {
             when {
                 anyOf {
-                    branch 'main'
-                    branch 'sophea'
                     branch 'dev'
                     branch 'staging'
                 }
