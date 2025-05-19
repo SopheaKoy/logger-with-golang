@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Load Configuration') {
+        stage('Use Config File') {
             when {
                 anyOf {
                     branch 'main'
@@ -12,15 +12,12 @@ pipeline {
                     branch 'staging'
                 }
             }
-
-        stage('Use Config File') {
             steps {
                 configFileProvider([configFile(fileId: '221c9bb7-955e-4feb-9329-9e60b3399d33', variable: 'CONFIG_FILE')]) {
                     sh 'cat $CONFIG_FILE'
                     // use your config file here
                 }
             }
-        }
         }
 
         stage('Deployment') {
