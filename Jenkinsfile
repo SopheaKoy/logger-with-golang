@@ -19,10 +19,10 @@ pipeline {
                     def configFileId = ""
                     switch(env.BRANCH_NAME) {
                         case 'sophea':
-                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"
+                            configFileId = "dev/221c9bb7-955e-4feb-9329-9e60b3399d33"
                             break
                         default:
-                            configFileId = "221c9bb7-955e-4feb-9329-9e60b3399d33"
+                            configFileId = "dev/221c9bb7-955e-4feb-9329-9e60b3399d33"
                             break
                     }
                     echo "Using config file ID: ${configFileId} for branch: ${env.BRANCH_NAME}"
