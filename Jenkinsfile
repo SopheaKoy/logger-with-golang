@@ -11,7 +11,7 @@ pipeline {
         stage('Use Secret File') {
             steps {
                 // withCredentials exposes the secret file path as an environment variable
-                withCredentials([file(credentialsId: 'dev_secret_file', variable: 'SECRET_FILE_PATH')]) {
+                withCredentials([file(credentialsId: 'dev_credetial', variable: 'SECRET_FILE_PATH')]) {
                     script {
                         echo "Secret file path: ${env.SECRET_FILE_PATH}"
 
