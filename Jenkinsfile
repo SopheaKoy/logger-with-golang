@@ -11,8 +11,7 @@ pipeline {
                 anyOf {
                     branch 'main'
                     branch 'sophea'
-                    branch 'dev'
-                    branch 'staging'
+                    branch 'dev' 
                 }
             }
             steps {
@@ -29,7 +28,6 @@ pipeline {
                     branch 'main'
                     branch 'sophea'
                     branch 'dev'
-                    branch 'staging'
                 }
             }
             steps {
@@ -41,7 +39,7 @@ pipeline {
                     def PORT = config.env.port
                     def ENV  = config.env.env
 
-                    echo "App Port: ${PORT}"
+                    echo "App Port:    ${PORT}"
                     echo "Environment: ${ENV}"
                 }
             }
