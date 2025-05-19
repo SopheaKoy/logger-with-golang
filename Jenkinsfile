@@ -10,6 +10,7 @@ pipeline {
             when {
                 anyOf {
                     branch 'sophea'
+                    branch 'dev-sophea'
                     branch 'dev' 
                     branch 'uat'
                 }
@@ -26,6 +27,7 @@ pipeline {
             when {
                 anyOf {
                     branch 'sophea'
+                    branch 'dev-sophea'
                     branch 'dev'
                     branch 'uat'
                 }
