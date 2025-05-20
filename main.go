@@ -12,8 +12,8 @@ import (
 
 	config "logger/config"
 	"logger/db"
-	schema "logger/ent/schema"
 	"logger/handler/auth"
+	schema "logger/schemas"
 	notification "logger/util"
 )
 

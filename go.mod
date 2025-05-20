@@ -3,6 +3,7 @@ module logger
 go 1.24.0
 
 require (
+	entgo.io/ent v0.12.0
 	github.com/go-playground/validator/v10 v10.26.0
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/gofiber/swagger v1.1.1

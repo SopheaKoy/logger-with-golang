@@ -640,3 +640,8 @@
 2025-05-16 23:29:22,223 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
 2025-05-16 23:29:22,632 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
 2025-05-16 23:29:22,760 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-19 21:57:42,425 - info - info - [94mStarting server on port 3000...[0m
+2025-05-20 16:12:52,085 - info - info - [94mStarting server on port 3000...[0m
+2025-05-20 16:12:57,085 - error - error - [91mGET / - 404 - 0.11 ms | Body: [0m
+2025-05-20 16:12:57,141 - error - error - [91mGET /favicon.ico - 404 - 0.00 ms | Body: [0m
+2025-05-20 16:13:08,608 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m

@@ -1,31 +1,55 @@
-package models
+package schema
 
 import (
 	"time"
 
+	"entgo.io/ent"
+	"entgo.io/ent/schema/field"
+
 	"github.com/google/uuid"
 )
 
-// UserModel represents a user in the system
+// User holds the schema definition for the User entity.
 type UserModel struct {
-	ID          uuid.UUID `json:"id" gorm:"type:uuid;primary_key;"`
-	FirstName   string    `json:"first_name" gorm:"not null"`
-	LastName    string    `json:"last_name" gorm:"not null"`
-	Email       string    `json:"email" gorm:"unique;not null"`
-	Password	string    `json:"-" gorm:"not null"`
-	CreatedAt   time.Time `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt   time.Time `json:"updated_at" gorm:"autoUpdateTime"`
-	DeletedAt	time.Time `json:"deleted_at" gorm:"autoDeleteTime"`
+	ent.Schema
 }
 
-/*
-In Go, return &UserModel{} is used to return a pointer to an instance of the UserModel struct. Here's what it does:
+// Fields of the User.
+func (UserModel) Fields() []ent.Field {
+	return []ent.Field{
+		field.UUID("id", uuid.UUID{}).
+			Default(uuid.New).
+			Unique().
+			Immutable(),
 
-Breakdown:
-	&UserModel{}:
-	&: The & operator in Go is used to get the memory address of a variable. When used with a struct (in this case, UserModel), it returns a pointer to that struct.
-	{}: The curly braces {} are used to initialize the struct. The values inside the curly braces are assigned to the fields of the struct. If no values are provided, 
-the struct fields are set to their zero values (e.g., empty strings for strings, 0 for integers, nil for pointers, etc.).
-return:
-	The return keyword is used to return a value from a function. In this case, return &UserModel{} returns a pointer to the newly created UserModel instance.
-*/
+		field.String("first_name").
+			NotEmpty(),
+
+		field.String("last_name").
+			NotEmpty(),
+
+		field.String("email").
+			NotEmpty().
+			Unique(),
+
+		field.String("password").
+			NotEmpty().
+			Sensitive(),
+
+		field.Time("created_at").
+			Default(time.Now),
+
+		field.Time("updated_at").
+			Default(time.Now).
+			UpdateDefault(time.Now),
+
+		field.Time("deleted_at").
+			Optional().
+			Nillable(),
+	}
+}
+
+// Edges of the User.
+func (UserModel) Edges() []ent.Edge {
+	return nil
+}
