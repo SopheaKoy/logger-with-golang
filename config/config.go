@@ -36,18 +36,18 @@ func LoadSettings() Setting {
 	viper.AutomaticEnv()
 
 	return Setting{
-		Port	: viper.GetString("PORT"),
-		Env		: viper.GetString("ENV"),
-		DBPort	: viper.GetString("DB_PORT"),
-		DBHost	: viper.GetString("DB_HOST"),
-		DBUser	: viper.GetString("DB_USER"),
-		DBPass	: viper.GetString("DB_PASS"),
-		DBName	: viper.GetString("DB_NAME"),
-		DBSSL	: viper.GetString("DB_SSL"),
-		BotToken: viper.GetString("TELEGRAM_BOT_TOKEN"),
-		ChatID	: viper.GetString("TELEGRAM_CHAT_ID"),
-		API_PREFIX_V1 : viper.GetString("API_PREFIX_V1"),
-		API_PREFIX_V2 : viper.GetString("API_PREFIX_V2"),
-		CORS_ALLOWED_ORIGINS: viper.GetString("CORS_ALLOWED_ORIGINS"),
+		Port	             : viper.GetString("PORT"),
+		Env		             : viper.GetString("ENV"),
+		DBPort	             : viper.GetString("DB_PORT"),
+		DBHost	             : viper.GetString("DB_HOST"),
+		DBUser	             : viper.GetString("DB_USER"),
+		DBPass	             : viper.GetString("DB_PASS"),
+		DBName	             : viper.GetString("DB_NAME"),
+		DBSSL	             : viper.GetString("DB_SSL"),
+		BotToken             : viper.GetString("TELEGRAM_BOT_TOKEN"),
+		ChatID	             : viper.GetString("TELEGRAM_CHAT_ID"),
+		API_PREFIX_V1        : viper.GetString("API_PREFIX_V1"),
+		API_PREFIX_V2        : viper.GetString("API_PREFIX_V2"),
+		CORS_ALLOWED_ORIGINS : viper.GetString("CORS_ALLOWED_ORIGINS"),
 	}
 }
