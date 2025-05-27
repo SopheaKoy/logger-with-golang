@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/spf13/viper"
 )
@@ -26,80 +26,172 @@ type TelegramMessageRequest struct {
 	ParseMode string `json:"parse_mode,omitempty"`
 }
 
-// SendTelegramMessage sends a message to the configured Telegram chat
-func SendTelegramMessage(message string) error {
-	// Log the start of the message sending
-	log.Println("Attempting to send Telegram message...")
+type BodyParams struct {
+	Method          string
+	Status          int
+	Endpoint        string
+	ResponseMessage string
+	LogID           string
+	RequestID       string
+	IP              string
+	UserAgent       string
+	Duration        float64
+	RequestBody     string
+	ResponseBody    string
+}
 
-	// Get Telegram bot token and chat ID from environment variables
+func SendTelegramMessage(message BodyParams) error {
 	botToken := viper.GetString("TELEGRAM_BOT_TOKEN")
-	chatID := viper.GetString("TELEGRAM_CHAT_ID")
+	chatID   := viper.GetString("TELEGRAM_CHAT_ID")
 
-	// Validate configuration
-	if botToken == "" || chatID == "" {
-		// Print detailed debug information
-		if botToken == "" {
-			log.Println("Error: TELEGRAM_BOT_TOKEN not configured")
-		}
-		if chatID == "" {
-			log.Println("Error: TELEGRAM_CHAT_ID not configured")
-		}
-		return fmt.Errorf("telegram configuration incomplete")
+	// Validate required configuration
+	if botToken == "" {
+		return fmt.Errorf("TELEGRAM_BOT_TOKEN not configured")
 	}
+	if chatID == "" {
+		return fmt.Errorf("TELEGRAM_CHAT_ID not configured")
+	}
+
+	// Format the message text
+	messageText := formatNotificationText(message)
 
 	// Prepare the request payload
-	msgReq := TelegramMessageRequest{
-		ChatID:    chatID,
-		Text:      message,
-		ParseMode: "HTML", // Enable HTML formatting if needed, can be removed
+	messageSend := TelegramMessageRequest{
+		ChatID	  : chatID,
+		Text	  : messageText,
+		ParseMode : "HTML",
 	}
 
-	// Marshal the payload to JSON
-	jsonPayload, err := json.Marshal(msgReq)
+	jsonPayload, err := json.Marshal(messageSend)
 	if err != nil {
-		log.Printf("Error marshaling JSON for Telegram: %v", err)
-		return err
+		return fmt.Errorf("error marshaling JSON for Telegram: %v", err)
 	}
-
-	// Prepare the request URL
-	url := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", botToken)
 
 	// Create a new request
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonPayload))
+	req, err := http.NewRequest("POST", fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", botToken), bytes.NewBuffer(jsonPayload))
 	if err != nil {
-		log.Printf("Error creating Telegram request: %v", err)
-		return err
+		return fmt.Errorf("error creating Telegram request: %v", err)
 	}
 
 	// Set content type to JSON
 	req.Header.Set("Content-Type", "application/json")
 
-	// Send the request
-	client := &http.Client{}
+	// Send the request with timeout
+	client := &http.Client{
+		Timeout: 10 * time.Second,
+	}
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Printf("Error sending Telegram message: %v", err)
-		return err
+		return fmt.Errorf("error sending Telegram message: %v", err)
 	}
 	defer resp.Body.Close()
 
-	// Read response body for logging
-	bodyBytes, _ := io.ReadAll(resp.Body)
+	// Read response body
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("error reading response body: %v", err)
+	}
 	respBody := string(bodyBytes)
 
 	// Check if the response status code is 200 (OK)
 	if resp.StatusCode != http.StatusOK {
-		log.Printf("Non-200 response from Telegram: %s\nResponse body: %s", resp.Status, respBody)
-		return fmt.Errorf("telegram API error: %s", resp.Status)
-	}
-
-	// Log success for successful requests
-	log.Println("Message successfully sent to Telegram!")
-
-	// Optionally log the response for debugging
-	if viper.GetBool("DEBUG") {
-		log.Printf("Telegram API response: %s", respBody)
+		return fmt.Errorf("telegram API error: %s, response: %s", resp.Status, respBody)
 	}
 
 	return nil
+}
+
+// SendTelegramMessageText sends a simple text message (renamed to avoid conflict)
+func SendTelegramMessageText(text string) error {
+	botToken := viper.GetString("TELEGRAM_BOT_TOKEN")
+	chatID := viper.GetString("TELEGRAM_CHAT_ID")
+
+	if botToken == "" || chatID == "" {
+		return fmt.Errorf("telegram configuration missing")
+	}
+
+	messageSend := TelegramMessageRequest{
+		ChatID: chatID,
+		Text:   text,
+	}
+
+	jsonPayload, err := json.Marshal(messageSend)
+	if err != nil {
+		return fmt.Errorf("error marshaling JSON: %v", err)
+	}
+
+	url := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", botToken)
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonPayload))
+	if err != nil {
+		return fmt.Errorf("error creating request: %v", err)
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{Timeout: 10 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return fmt.Errorf("error sending message: %v", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		bodyBytes, err := io.ReadAll(resp.Body)
+		if err != nil {
+			return fmt.Errorf("telegram API error: %s", resp.Status)
+		}
+		return fmt.Errorf("telegram API error: %s, response: %s", resp.Status, string(bodyBytes))
+	}
+
+	return nil
+}
+
+// formatNotificationText formats the BodyParams into a readable message
+func formatNotificationText(params BodyParams) string {
+	// Get current time in UTC+7
+	timestamp := time.Now().In(time.FixedZone("UTC+7", 7*60*60)).Format("02/01/2006 15:04:05")
+	
+	// Get system and environment from viper
+	system := strings.ToUpper(viper.GetString("AUTH_CLIENT_NAME"))
+	if system == "" {
+		system = "N/A"
+	}
+	env := strings.ToUpper(viper.GetString("AUTH_CLIENT_ENV"))
+	if env == "" {
+		env = "N/A"
+	}
+
+	// Format the message with HTML tags for better formatting
+	message := fmt.Sprintf(
+		"<code>DATE         : 🕒 %s</code>\n"+
+			"<code>SYSTEM       : %s</code>\n"+
+			"<code>ENVIRONMENT  : %s</code>\n"+
+			"<code>METHOD       : %s</code>\n"+
+			"<code>STATUS       : %s %d</code>\n"+
+			"<code>ENDPOINT     : %s</code>\n"+
+			"<code>MESSAGE      : %s</code>",
+		timestamp,
+		system,
+		env,
+		params.Method,
+		getColorForStatus(params.Status), params.Status,
+		params.Endpoint,
+		params.ResponseMessage,
+	)
+
+	return message
+}
+
+// getStatusEmoji returns emoji based on HTTP status
+func getColorForStatus(status int) string {
+	switch {
+	case status >= 200 && status < 300:
+		return "🟢"
+	case status >= 300 && status < 400:
+		return "🔵"
+	case status >= 400 && status < 600:
+		return "🔴"
+	default:
+		return "🟡"
+	}
 }

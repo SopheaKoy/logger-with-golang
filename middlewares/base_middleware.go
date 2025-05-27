@@ -14,19 +14,19 @@ import (
 	"logger/config"
 
 	schema "logger/schemas"
+	notifier "logger/util"
 )
 
 // LogMiddleware struct that holds the Logger and MaintenanceMode
 type LogMiddleware struct {
-	Logger          *config.Logger // Logger is now from the config package
+	Logger          *config.Logger
 	MaintenanceMode bool
 }
 
-// NewLogMiddleware creates a new instance of LogMiddleware with the logger passed in
 func NewLogMiddleware(logger *config.Logger) *LogMiddleware {
 	return &LogMiddleware{
-		Logger:          logger,      // Pass logger to LogMiddleware
-		MaintenanceMode: false,       // Default to false; modify as needed
+		Logger		    : logger,
+		MaintenanceMode : false,
 	}
 }
 
@@ -40,41 +40,41 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 
 		contentType := c.Get("Content-Type")
 		method      := c.Method()
-		url         := c.OriginalURL()
+		url 	    := c.OriginalURL()
 		var body string
-	
+
 		if method == fiber.MethodPost || method == fiber.MethodPut {
 			switch {
-			case strings.HasPrefix(contentType, fiber.MIMEApplicationJSON):
-				body = string(c.Body())
+				case strings.HasPrefix(contentType, fiber.MIMEApplicationJSON):
+					body = string(c.Body())
 
-			case strings.HasPrefix(contentType, fiber.MIMEApplicationForm):
-				body = string(c.Body())
+				case strings.HasPrefix(contentType, fiber.MIMEApplicationForm):
+					body = string(c.Body())
 
-			case strings.HasPrefix(contentType, fiber.MIMEMultipartForm):
-				form, err := c.MultipartForm()
-				if err == nil && form != nil {
-					formData := make(map[string][]string)
-					for key, val := range form.Value {
-						formData[key] = val
+				case strings.HasPrefix(contentType, fiber.MIMEMultipartForm):
+					form, err := c.MultipartForm()
+					if err == nil && form != nil {
+						formData := make(map[string][]string)
+						for key, val := range form.Value {
+							formData[key] = val
+						}
+						jsonBytes, _ := json.Marshal(formData)
+						body = string(jsonBytes)
+					} else {
+						lm.Logger.Error().Error("Error parsing multipart form")
 					}
-					jsonBytes, _ := json.Marshal(formData)
-					body = string(jsonBytes)
-				} else {
-					lm.Logger.Error().Error("Error parsing multipart form")
-				}
 			}
 		}
-		
+
 		start        := time.Now()
-		err          := c.Next()
+		err 	     := c.Next()
 		durationInMs := float64((time.Since(start)).Nanoseconds()) / 1e6
 		statusCode   := c.Response().StatusCode()
 
 		if fiberErr, ok := err.(*fiber.Error); ok {
 			statusCode = fiberErr.Code
 		}
-		
+
 		logEntry := fmt.Sprintf("%s %s - %d - %.2f ms | Body: %s",
 			method, url, statusCode, durationInMs, body,
 		)
@@ -94,43 +94,73 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 
 // HTTPExceptionHandler handles custom error responses globally
 func HTTPExceptionHandler(c *fiber.Ctx, err error) error {
-	
-	// Check if the error is of type *fiber.Error (HTTP-related error)
-	if fiberErr, ok := err.(*fiber.Error); ok {
-		// Log the error details (could also log it to a file or external system)
-		log.Printf("HTTP Error: %v, StatusCode: %d", err.Error(), fiberErr.Code)
+	logID := uuid.New()
 
-		// Return a custom JSON response for HTTP exceptions
-		return c.Status(fiberErr.Code).JSON(schema.IResponseBase{
-			LogID	: uuid.New(),
-			Success	: 0, 
-			Code	: fmt.Sprintf("%d", fiberErr.Code),
+	if fiberErr, ok := err.(*fiber.Error); ok {
+		statusCode := fiberErr.Code
+
+		log.Printf("HTTP Error: %v, StatusCode: %d", err.Error(), statusCode)
+
+		go notifier.SendTelegramMessage(
+			notifier.BodyParams{
+				Method			: c.Method(),
+				Status			: statusCode,
+				Endpoint		: c.OriginalURL(),
+				ResponseMessage	: err.Error(),
+				LogID	 		: logID.String(),
+				IP		 		: c.IP(),
+				UserAgent		: c.Get("User-Agent"),
+			},
+		)
+
+		return c.Status(statusCode).JSON(schema.IResponseBase{
+			LogID	: logID,
+			Success : 0,
+			Code	: fmt.Sprintf("%d", statusCode),
 			Message	: fiberErr.Message,
+			Data	: nil,
 		})
 	}
 
-	// Handle non-HTTP errors by returning a 500 Internal Server Error
-	log.Printf("Unknown Error: %v", err)
+	statusCode   := fiber.StatusInternalServerError
+	errorMessage := "Internal Server Error"
 
-	// Return a generic 500 Internal Server Error response with the error details
-	return c.Status(fiber.StatusInternalServerError).JSON(schema.IResponseBase{
-		LogID	: uuid.New(),
+	go notifier.SendTelegramMessage(
+		notifier.BodyParams{
+			Method			: c.Method(),
+			Status			: statusCode,
+			Endpoint		: c.OriginalURL(),
+			ResponseMessage	: err.Error(),
+			LogID	 		: logID.String(),
+			IP		 		: c.IP(),
+			UserAgent		: c.Get("User-Agent"),
+		},
+	)
+
+	return c.Status(statusCode).JSON(schema.IResponseBase{
+		LogID	: logID,
 		Success	: 0,
-		Code	: "500",
-		Message	: "Internal Server Error",
+		Code	: fmt.Sprintf("%d", statusCode),
+		Message	: errorMessage,
 		Data	: fmt.Sprintf("%v", err),
 	})
 }
 
+
 // RequestValidationErrorHandler handles validator.ValidationErrors
 func RequestValidationErrorHandler(c *fiber.Ctx, err error) error {
+	
 	if validationErrors, ok := err.(validator.ValidationErrors); ok {
 		errs := make(map[string]string)
 		for _, fieldErr := range validationErrors {
 			errs[fieldErr.Field()] = fmt.Sprintf("must be %s", fieldErr.Tag())
 		}
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"validation_errors": errs,
+		return c.Status(fiber.StatusBadRequest).JSON(schema.IResponseBase{
+			LogID:   uuid.New(),
+			Success: 0,
+			Code:    "400",
+			Message: "Validation Error",
+			Data:    errs,
 		})
 	}
 

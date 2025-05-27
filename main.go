@@ -6,6 +6,7 @@ import (
 	"logger/middlewares"
 	"os"
 
+	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/swagger"
@@ -14,7 +15,6 @@ import (
 	"logger/db"
 	"logger/handler/auth"
 	schema "logger/schemas"
-	notification "logger/util"
 )
 
 type CreatePublicRequest struct {
@@ -45,6 +45,7 @@ func main() {
 	// Create an instance of Fiber
 	app := fiber.New(fiber.Config{
 		StrictRouting: true,
+		ErrorHandler:  middlewares.HTTPExceptionHandler,
 	})
 
 	app.Get("/swagger/*", swagger.HandlerDefault)
@@ -58,18 +59,30 @@ func main() {
 
 	// CORS middleware setup (allow all origins)
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: config.LoadSettings().CORS_ALLOWED_ORIGINS,
-		AllowMethods: "GET,POST,PUT,DELETE",
-		AllowHeaders: "*",
+		AllowOrigins:     config.LoadSettings().CORS_ALLOWED_ORIGINS,
+		AllowMethods:     "GET,POST,PUT,DELETE",
+		AllowHeaders:     "*",
 		AllowCredentials: false,
 	}))
 
 	// Apply the logging middleware
 	app.Use(logMiddleware.LogAccess())
 
+	// Register error handlers
+	app.Use(func(c *fiber.Ctx) error {
+		err := c.Next()
+		if err != nil {
+			if validationErr, ok := err.(validator.ValidationErrors); ok {
+				return middlewares.RequestValidationErrorHandler(c, validationErr)
+			}
+			return middlewares.HTTPExceptionHandler(c, err)
+		}
+		return nil
+	})
+
 	// Add group API with /api/v1 prefix
 	apiPrefix := app.Group(config.LoadSettings().API_PREFIX_V1)
-	
+
 	apiPrefix.Get("/public", publicHandler)
 	apiPrefix.Post("/public", publicCreationHandler)
 	apiPrefix.Get("/user", userHandler)
@@ -113,13 +126,12 @@ func publicCreationHandler(c *fiber.Ctx) error {
 // @Router /user [get]
 func userHandler(c *fiber.Ctx) error {
 	// send notify
-	notification.SendTelegramMessage("Send the message here...!!!")
-	return c.Status(fiber.StatusOK).JSON(
-		schema.IResponseBase{
-			Code: "200",
-			Data: "Getting start call ther user....!!!",
-		},
-	)
+
+	response := schema.NewResponse()
+	response.Code = "200"
+	response.Data = "Getting start call ther user....!!!"
+
+	return c.Status(fiber.StatusOK).JSON(response)
 }
 
 // fileHandler handles file uploads.
@@ -137,31 +149,34 @@ func fileHandler(c *fiber.Ctx) error {
 	// Get the uploaded file from the form
 	fileHeader, err := c.FormFile("file")
 	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "File not provided",
-		})
+		response := schema.NewErrorResponse(err)
+		response.Code = "400"
+		return c.Status(fiber.StatusBadRequest).JSON(response)
 	}
 
 	// Optional: Create the upload directory if it doesn't exist
 	err = os.MkdirAll("./uploads", os.ModePerm)
 	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "Failed to create upload directory",
-		})
+		response := schema.NewErrorResponse(err)
+		response.Code = fmt.Sprintf("%d", fiber.StatusOK)
+		return c.Status(fiber.StatusInternalServerError).JSON(response)
 	}
 
 	// Save the file
 	savePath := fmt.Sprintf("./uploads/%s", fileHeader.Filename)
 	err = c.SaveFile(fileHeader, savePath)
 	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "Failed to save file",
-		})
+		response := schema.NewErrorResponse(err)
+		response.Code = fmt.Sprintf("%d", fiber.StatusOK)
+		return c.Status(fiber.StatusInternalServerError).JSON(response)
 	}
 
 	// Success response
-	return c.JSON(fiber.Map{
-		"message"	: "Upload successful",
-		"file"		: fileHeader.Filename,
-	})
+	response := schema.NewResponse()
+	response.Code = fmt.Sprintf("%d", fiber.StatusOK)
+	response.Data = fiber.Map{
+		"message": "Upload successful",
+		"file":    fileHeader.Filename,
+	}
+	return c.JSON(response)
 }

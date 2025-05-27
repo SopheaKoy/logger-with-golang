@@ -645,3 +645,305 @@
 2025-05-20 16:12:57,085 - error - error - [91mGET / - 404 - 0.11 ms | Body: [0m
 2025-05-20 16:12:57,141 - error - error - [91mGET /favicon.ico - 404 - 0.00 ms | Body: [0m
 2025-05-20 16:13:08,608 - info - info - [94mGET /api/v1/public - 200 - 0.00 ms | Body: [0m
+2025-05-27 10:17:45,538 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:17:49,006 - error - error - [91mGET / - 404 - 0.10 ms | Body: [0m
+2025-05-27 10:18:14,273 - error - error - [91mPOST / - 404 - 0.01 ms | Body: [0m
+2025-05-27 10:18:36,890 - error - error - [91mPOST /api/v1/user - 405 - 0.02 ms | Body: [0m
+2025-05-27 10:27:23,193 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:27:23,533 - error - error - [91mPOST /api/v1/user - 405 - 0.22 ms | Body: [0m
+2025-05-27 10:27:57,875 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:28:05,626 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:28:08,675 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:28:13,232 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:28:14,461 - error - error - [91mPOST /api/v1/user - 405 - 0.17 ms | Body: [0m
+2025-05-27 10:28:15,100 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:28:15,705 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:28:16,400 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:28:23,062 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:28:30,606 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:28:46,905 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:29:10,064 - error - error - [91mPOST /api/v1/user - 405 - 0.30 ms | Body: [0m
+2025-05-27 10:29:38,187 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:29:51,932 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:30:01,961 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:30:03,029 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:30:04,833 - error - error - [91mPOST /api/v1/user - 405 - 0.18 ms | Body: [0m
+2025-05-27 10:30:05,515 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:06,098 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:11,815 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:30:14,189 - error - error - [91mPOST /api/v1/user - 405 - 0.10 ms | Body: [0m
+2025-05-27 10:30:15,029 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:15,688 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:30,393 - error - error - [91mPOST /api/v1/user - 405 - 0.02 ms | Body: [0m
+2025-05-27 10:30:31,117 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:32,938 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:30:40,840 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:31:18,519 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:31:20,407 - error - error - [91mPOST /api/v1/user - 405 - 0.11 ms | Body: [0m
+2025-05-27 10:31:21,921 - error - error - [91mPOST /api/v1/user - 405 - 0.02 ms | Body: [0m
+2025-05-27 10:31:32,908 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:32:05,414 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:32:09,641 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:32:10,833 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:32:13,994 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:32:15,157 - error - error - [91mPOST /api/v1/user - 405 - 0.13 ms | Body: [0m
+2025-05-27 10:32:16,296 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:32:17,045 - error - error - [91mPOST /api/v1/user - 405 - 0.01 ms | Body: [0m
+2025-05-27 10:34:41,201 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:42,531 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:48,820 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:50,951 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:52,007 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:58,084 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:34:59,768 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:35:02,986 - error - error - [91mPOST /api/v1/user - 405 - 0.38 ms | Body: [0m
+2025-05-27 10:35:05,638 - error - error - [91mPOST /api/v1/user - 405 - 0.16 ms | Body: [0m
+2025-05-27 10:35:06,216 - error - error - [91mPOST /api/v1/user - 405 - 0.04 ms | Body: [0m
+2025-05-27 10:35:08,191 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 10:35:08,560 - error - error - [91mPOST /api/v1/user - 405 - 0.09 ms | Body: [0m
+2025-05-27 10:35:09,488 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 10:35:09,942 - error - error - [91mPOST /api/v1/user - 405 - 0.10 ms | Body: [0m
+2025-05-27 10:35:10,696 - error - error - [91mPOST /api/v1/user - 405 - 0.05 ms | Body: [0m
+2025-05-27 10:35:11,200 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 10:35:11,774 - error - error - [91mPOST /api/v1/user - 405 - 0.05 ms | Body: [0m
+2025-05-27 10:35:24,340 - info - info - [94mGET /api/v1/user - 200 - 1107.58 ms | Body: [0m
+2025-05-27 10:36:09,981 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:22,452 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:33,648 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:35,000 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:36,464 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:37,956 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:39,242 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:41,525 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:36:44,267 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:37:23,115 - info - info - [94mGET /api/v1/user - 200 - 971.49 ms | Body: [0m
+2025-05-27 10:51:23,920 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:51:30,995 - info - info - [94mGET /api/v1/user - 200 - 950.00 ms | Body: [0m
+2025-05-27 10:51:37,381 - error - error - [91mPOST /api/v1/user - 405 - 0.09 ms | Body: [0m
+2025-05-27 10:56:19,893 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 10:56:39,642 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:05:17,047 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:05:17,049 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:05:17,049 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:05:19,730 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:05:19,732 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:05:19,732 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:08:15,489 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:08:15,494 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:08:15,494 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:08:37,451 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:08:37,454 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:08:37,454 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:18,195 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:18,195 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:18,195 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:21,893 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:21,893 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:21,893 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:33,582 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:33,582 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:33,582 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:42,854 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:42,855 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:42,855 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:45,883 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:45,886 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:45,886 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:10:52,212 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:52,212 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:10:52,212 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:11:22,180 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:11:22,184 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:11:22,184 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:11:26,315 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:11:26,317 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:11:26,317 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:30,435 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:30,435 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:30,435 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:35,799 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:35,799 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:35,800 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:38,914 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:38,915 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:38,915 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:41,589 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:41,589 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:41,590 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:44,735 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:44,744 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:44,744 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:46,228 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:46,228 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:46,228 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:54,562 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:54,562 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:54,562 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:12:56,664 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:56,664 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:12:56,664 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:13:07,638 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:07,638 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:07,639 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:13:09,802 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:09,806 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:09,806 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:13:42,124 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:42,124 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:13:42,124 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:02,888 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:02,888 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:02,888 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:08,635 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:08,636 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:08,636 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:20,975 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:20,975 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:20,976 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:26,617 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:26,618 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:26,618 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:40,303 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:40,303 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:40,304 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:14:51,522 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:51,522 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:14:51,523 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:18:37,776 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:37,776 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:37,776 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:18:41,308 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:41,320 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:41,320 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:18:49,436 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:49,440 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:18:49,440 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:20:13,618 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:20:13,618 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:20:13,618 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:21:15,793 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:21:15,794 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:21:15,794 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:23:00,223 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:23:00,224 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:23:00,224 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:25:18,378 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:25:18,378 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:25:18,378 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:28:00,936 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:00,936 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:00,936 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:28:05,660 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:05,661 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:05,661 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:28:13,420 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:13,420 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:13,420 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:28:22,464 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:22,465 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:22,465 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:28:56,288 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:56,288 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:28:56,289 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:29:13,538 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:29:13,540 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:29:13,540 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:31:39,610 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:31:39,610 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:31:39,610 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:36:09,875 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:36:14,135 - error - error - [91mPOST /api/v1/user - 405 - 0.47 ms | Body: [0m
+2025-05-27 11:36:39,163 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 11:36:55,435 - error - error - [91mPOST /api/v1/user - 405 - 0.07 ms | Body: [0m
+2025-05-27 11:37:24,879 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:24,880 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:24,880 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:37:30,028 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:30,030 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:30,030 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:37:31,082 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:31,084 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:31,084 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:37:32,232 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:32,233 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:37:32,233 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:37:32,764 - error - error - [91mPOST /api/v1/user - 405 - 0.30 ms | Body: [0m
+2025-05-27 11:37:33,365 - error - error - [91mPOST /api/v1/user - 405 - 0.07 ms | Body: [0m
+2025-05-27 11:37:33,928 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 11:37:36,010 - error - error - [91mPOST /api/v1/user - 405 - 0.06 ms | Body: [0m
+2025-05-27 11:37:36,616 - error - error - [91mPOST /api/v1/user - 405 - 0.05 ms | Body: [0m
+2025-05-27 11:37:41,419 - error - error - [91mPOST /api/v1/user - 405 - 0.08 ms | Body: [0m
+2025-05-27 11:37:51,066 - error - error - [91mPOST /api/v1/user - 405 - 0.09 ms | Body: [0m
+2025-05-27 11:37:52,887 - error - error - [91mPOST /api/v1/user - 405 - 0.07 ms | Body: [0m
+2025-05-27 11:38:01,200 - error - error - [91mPOST /api/v1/user - 405 - 0.07 ms | Body: [0m
+2025-05-27 11:38:29,609 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:38:29,609 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:38:29,610 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:38:33,704 - error - error - [91mPOST /api/v1/user - 405 - 0.53 ms | Body: [0m
+2025-05-27 11:38:34,304 - error - error - [91mPOST /api/v1/user - 405 - 0.06 ms | Body: [0m
+2025-05-27 11:38:34,956 - error - error - [91mPOST /api/v1/user - 405 - 0.13 ms | Body: [0m
+2025-05-27 11:38:35,608 - error - error - [91mPOST /api/v1/user - 405 - 0.19 ms | Body: [0m
+2025-05-27 11:39:26,330 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:39:27,727 - error - error - [91mPOST /api/v1/user - 405 - 0.55 ms | Body: [0m
+2025-05-27 11:39:28,361 - error - error - [91mPOST /api/v1/user - 405 - 0.19 ms | Body: [0m
+2025-05-27 11:40:31,147 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:40:32,409 - error - error - [91mPOST /api/v1/user - 405 - 0.68 ms | Body: [0m
+2025-05-27 11:41:54,950 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:41:54,951 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:41:54,951 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:41:57,440 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:41:57,440 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:41:57,440 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:42:04,154 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:04,155 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:04,155 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:42:22,917 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:22,917 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:22,917 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:42:39,059 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:39,064 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:39,064 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:42:47,311 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:47,312 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:47,312 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:42:57,095 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:57,095 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:42:57,095 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:00,676 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:00,676 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:00,676 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:20,299 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:20,302 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:20,302 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:21,339 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:21,339 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:21,339 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:22,508 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:22,508 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:22,508 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:33,054 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:33,054 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:33,055 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:41,999 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:42,000 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:42,000 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:43:43,029 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:43,032 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:43:43,032 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:44:15,862 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:15,863 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:15,863 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:44:35,528 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:35,532 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:35,532 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:44:37,250 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:37,250 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:44:37,250 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:45:47,994 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:45:47,994 - error - error - [91mFailed to start server:failed to listen: listen tcp4 :3000: bind: address already in use[0m
+2025-05-27 11:45:50,737 - error - error - [91mPOST /api/v1/user - 405 - 0.41 ms | Body: [0m
+2025-05-27 11:46:36,126 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:46:41,576 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:46:43,223 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:47:46,123 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 11:47:49,981 - error - error - [91mPOST /api/v1/user - 405 - 0.46 ms | Body: [0m
