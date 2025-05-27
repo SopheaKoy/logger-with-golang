@@ -947,3 +947,37 @@
 2025-05-27 11:46:43,223 - info - info - [94mStarting server on port 3000...[0m
 2025-05-27 11:47:46,123 - info - info - [94mStarting server on port 3000...[0m
 2025-05-27 11:47:49,981 - error - error - [91mPOST /api/v1/user - 405 - 0.46 ms | Body: [0m
+2025-05-27 21:24:02,626 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:27:11,062 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:27:41,882 - error - error - [91mGET / - 404 - 0.55 ms | Body: [0m
+2025-05-27 21:27:48,749 - error - error - [91mGET / - 404 - 0.10 ms | Body: [0m
+2025-05-27 21:33:49,325 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:33:52,186 - error - error - [91mGET / - 404 - 0.64 ms | Body: [0m
+2025-05-27 21:34:43,430 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:35:11,209 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:35:16,528 - error - error - [91mGET / - 404 - 0.61 ms | Body: [0m
+2025-05-27 21:35:20,064 - error - error - [91mGET / - 404 - 0.41 ms | Body: [0m
+2025-05-27 21:35:20,933 - error - error - [91mGET / - 404 - 0.31 ms | Body: [0m
+2025-05-27 21:35:31,276 - error - error - [91mGET / - 404 - 0.50 ms | Body: [0m
+2025-05-27 21:35:33,198 - error - error - [91mGET / - 404 - 0.28 ms | Body: [0m
+2025-05-27 21:35:42,670 - info - info - [94mGET /api/v1/user - 200 - 0.05 ms | Body: [0m
+2025-05-27 21:35:44,710 - info - info - [94mGET /api/v1/user - 200 - 0.02 ms | Body: [0m
+2025-05-27 21:35:47,577 - error - error - [91mPOST /api/v1/user - 405 - 0.43 ms | Body: [0m
+2025-05-27 21:35:52,969 - error - error - [91mPOST /api/v1/user - 405 - 0.29 ms | Body: [0m
+2025-05-27 21:37:37,602 - error - error - [91mPOST /api/v1/user - 405 - 0.60 ms | Body: [0m
+2025-05-27 21:38:13,907 - error - error - [91mPOST /api/v1/user - 405 - 0.57 ms | Body: [0m
+2025-05-27 21:38:14,576 - error - error - [91mPOST /api/v1/user - 405 - 0.24 ms | Body: [0m
+2025-05-27 21:38:16,091 - error - error - [91mPOST /api/v1/user - 405 - 0.50 ms | Body: [0m
+2025-05-27 21:38:42,551 - error - error - [91mPOST /api/v1/user - 405 - 0.32 ms | Body: [0m
+2025-05-27 21:38:43,477 - error - error - [91mPOST /api/v1/user - 405 - 0.30 ms | Body: [0m
+2025-05-27 21:39:12,266 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:39:13,497 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:39:14,616 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:39:18,894 - error - error - [91mPOST /api/v1/user - 405 - 0.45 ms | Body: [0m
+2025-05-27 21:40:00,403 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:40:01,251 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:40:05,758 - error - error - [91mPOST /api/v1/user - 405 - 0.61 ms | Body: [0m
+2025-05-27 21:42:02,580 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:42:05,934 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:42:16,246 - info - info - [94mStarting server on port 3000...[0m
+2025-05-27 21:42:19,247 - error - error - [91mPOST /api/v1/user - 405 - 0.60 ms | Body: [0m

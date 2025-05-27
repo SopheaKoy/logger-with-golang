@@ -27,6 +27,7 @@ type TelegramMessageRequest struct {
 }
 
 type BodyParams struct {
+	System 			string
 	Method          string
 	Status          int
 	Endpoint        string
@@ -152,11 +153,11 @@ func formatNotificationText(params BodyParams) string {
 	timestamp := time.Now().In(time.FixedZone("UTC+7", 7*60*60)).Format("02/01/2006 15:04:05")
 	
 	// Get system and environment from viper
-	system := strings.ToUpper(viper.GetString("AUTH_CLIENT_NAME"))
+	system := strings.ToUpper(viper.GetString("PROJECT_NAME"))
 	if system == "" {
 		system = "N/A"
 	}
-	env := strings.ToUpper(viper.GetString("AUTH_CLIENT_ENV"))
+	env := strings.ToUpper(viper.GetString("ENV"))
 	if env == "" {
 		env = "N/A"
 	}

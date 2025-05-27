@@ -95,7 +95,7 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 // HTTPExceptionHandler handles custom error responses globally
 func HTTPExceptionHandler(c *fiber.Ctx, err error) error {
 	logID := uuid.New()
-
+	
 	if fiberErr, ok := err.(*fiber.Error); ok {
 		statusCode := fiberErr.Code
 
@@ -156,11 +156,11 @@ func RequestValidationErrorHandler(c *fiber.Ctx, err error) error {
 			errs[fieldErr.Field()] = fmt.Sprintf("must be %s", fieldErr.Tag())
 		}
 		return c.Status(fiber.StatusBadRequest).JSON(schema.IResponseBase{
-			LogID:   uuid.New(),
-			Success: 0,
-			Code:    "400",
-			Message: "Validation Error",
-			Data:    errs,
+			LogID	: uuid.New(),
+			Success	: 0,
+			Code	: "400",
+			Message	: "Validation Error",
+			Data	: errs,
 		})
 	}
 
