@@ -31,6 +31,7 @@ func NewLogMiddleware(logger *config.Logger) *LogMiddleware {
 }
 
 func (lm *LogMiddleware) LogAccess() fiber.Handler {
+	logID := uuid.New()
 	return func(c *fiber.Ctx) error {
 		if lm.MaintenanceMode {
 			return c.Status(fiber.StatusServiceUnavailable).JSON(fiber.Map{
@@ -88,7 +89,13 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 				lm.Logger.Info(logEntry)
 			}
 		}
-		return err
+		return c.Status(statusCode).JSON(schema.IResponseBase{
+			LogID	: logID,
+			Success	: 0,
+			Code	: fmt.Sprintf("%d", statusCode),
+			Message	: body,
+			Data	: fmt.Sprintf("%v", err),
+		})
 	}
 }
 
