@@ -11,10 +11,10 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 
-	"logger/config"
+	"logger_with_go/config"
 
-	schema "logger/schemas"
-	notifier "logger/util"
+	schema "logger_with_go/schemas"
+	notifier "logger_with_go/util"
 )
 
 // LogMiddleware struct that holds the Logger and MaintenanceMode
@@ -25,8 +25,8 @@ type LogMiddleware struct {
 
 func NewLogMiddleware(logger *config.Logger) *LogMiddleware {
 	return &LogMiddleware{
-		Logger		    : logger,
-		MaintenanceMode : false,
+		Logger:          logger,
+		MaintenanceMode: false,
 	}
 }
 
@@ -40,55 +40,57 @@ func (lm *LogMiddleware) LogAccess() fiber.Handler {
 		}
 
 		contentType := c.Get("Content-Type")
-		method      := c.Method()
-		url 	    := c.OriginalURL()
+		method := c.Method()
+		url := c.OriginalURL()
 		var body string
 
 		if method == fiber.MethodPost || method == fiber.MethodPut {
 			switch {
-				case strings.HasPrefix(contentType, fiber.MIMEApplicationJSON):
-					body = string(c.Body())
+			case strings.HasPrefix(contentType, fiber.MIMEApplicationJSON):
+				body = string(c.Body())
 
-				case strings.HasPrefix(contentType, fiber.MIMEApplicationForm):
-					body = string(c.Body())
+			case strings.HasPrefix(contentType, fiber.MIMEApplicationForm):
+				body = string(c.Body())
 
-				case strings.HasPrefix(contentType, fiber.MIMEMultipartForm):
-					form, err := c.MultipartForm()
-					if err == nil && form != nil {
-						formData := make(map[string][]string)
-						for key, val := range form.Value {
-							formData[key] = val
-						}
-						jsonBytes, _ := json.Marshal(formData)
-						body = string(jsonBytes)
-					} else {
-						lm.Logger.Error().Error("Error parsing multipart form")
+			case strings.HasPrefix(contentType, fiber.MIMEMultipartForm):
+				form, err := c.MultipartForm()
+				if err == nil && form != nil {
+					formData := make(map[string][]string)
+					for key, val := range form.Value {
+						formData[key] = val
 					}
+					jsonBytes, _ := json.Marshal(formData)
+					body = string(jsonBytes)
+				} else {
+					lm.Logger.Error().Error("Error parsing multipart form")
+				}
 			}
 		}
 
-		start        := time.Now()
-		err 	     := c.Next()
+		start := time.Now()
+		err := c.Next()
 		durationInMs := float64((time.Since(start)).Nanoseconds()) / 1e6
-		statusCode   := c.Response().StatusCode()
+		statusCode := c.Response().StatusCode()
 
 		if fiberErr, ok := err.(*fiber.Error); ok {
 			statusCode = fiberErr.Code
 		}
 
+		// Create log entry without color codes
 		logEntry := fmt.Sprintf("%s %s - %d - %.2f ms | Body: %s",
 			method, url, statusCode, durationInMs, body,
 		)
-
-		fmt.Println("LOGGER FROM MIDDLEWARE=", logEntry)
-
+		lm.Logger.Warn(logEntry)
 		if c.Method() != fiber.MethodOptions {
 			if err != nil || statusCode >= 400 {
+				// Log error without color codes
 				lm.Logger.Error().Error(logEntry)
 			} else {
+				// Log info without color codes
 				lm.Logger.Info(logEntry)
 			}
 		}
+
 		return c.Status(statusCode).JSON(schema.IResponseBase{
 			LogID	: logID,
 			Success	: 0,

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	_ "logger/docs"
-	"logger/middlewares"
+	_ "logger_with_go/docs"
+	"logger_with_go/middlewares"
 	"os"
 
 	"github.com/go-playground/validator/v10"
@@ -11,10 +11,10 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/swagger"
 
-	config "logger/config"
-	"logger/db"
-	"logger/handler/auth"
-	schema "logger/schemas"
+	config "logger_with_go/config"
+	"logger_with_go/db"
+	"logger_with_go/handler/auth"
+	schema "logger_with_go/schemas"
 )
 
 type CreatePublicRequest struct {

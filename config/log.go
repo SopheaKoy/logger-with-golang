@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"regexp"
 
@@ -71,14 +72,17 @@ func (f *CustomFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 	// Get the message
 	message := entry.Message
-	
-	// If this is for a file, strip any color codes
-	if !f.IsTerminal {
-		message = stripColorCodes(message)
-	}
 
 	// Create the log message based on the format you want
-	logMessage := fmt.Sprintf("%s - %s - %s - %s\n", timestamp, entry.Level, entry.Level.String(), message)
+	var logMessage string
+	if f.IsTerminal {
+		// For terminal, include colors
+		logMessage = fmt.Sprintf("%s - %s - %s - %s\n", timestamp, entry.Level, entry.Level.String(), message)
+	} else {
+		// For file, strip colors and use clean format
+		cleanMessage := stripColorCodes(message)
+		logMessage = fmt.Sprintf("%s - %s - %s - %s\n", timestamp, entry.Level, entry.Level.String(), cleanMessage)
+	}
 
 	// Return the formatted log message as a byte slice
 	return []byte(logMessage), nil
@@ -86,7 +90,8 @@ func (f *CustomFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 // Logger struct
 type Logger struct {
-	log *logrus.Logger
+	log        *logrus.Logger
+	consoleLog *logrus.Logger
 }
 
 // NewLogger creates and configures the logger
@@ -107,15 +112,26 @@ func NewLogger() *Logger {
 		l.Fatalf("Failed to open log file: %v", err)
 	}
 
-	// Check if output is a terminal (is a TTY device)
-	isTerminal := isTerminal(os.Stdout)
+	// Create a multi-writer to write to both file and console
+	multiWriter := io.MultiWriter(file, os.Stdout)
 
 	// Set up the logger output
-	l.SetOutput(file)
+	l.SetOutput(multiWriter)
 	l.SetLevel(logrus.InfoLevel)
-	l.SetFormatter(&CustomFormatter{IsTerminal: isTerminal})
 
-	return &Logger{log: l}
+	// Use different formatters for file and console
+	l.SetFormatter(&CustomFormatter{IsTerminal: false})  // File formatter (no colors)
+	
+	// Create a separate logger for console output with colors
+	consoleLogger := logrus.New()
+	consoleLogger.SetOutput(os.Stdout)
+	consoleLogger.SetLevel(logrus.InfoLevel)
+	consoleLogger.SetFormatter(&CustomFormatter{IsTerminal: true})  // Console formatter (with colors)
+
+	return &Logger{
+		log: l,
+		consoleLog: consoleLogger,
+	}
 }
 
 // Utility function to check if the output is a terminal
@@ -128,22 +144,25 @@ func isTerminal(f *os.File) bool {
 	return (stat.Mode() & os.ModeCharDevice) != 0
 }
 
-// Info prints a blue info message
+// Info prints a green info message
 func (l *Logger) Info(args ...interface{}) {
 	msg := fmt.Sprint(args...)
-	l.log.Infof("%s%s%s", ColorBlue, msg, ColorReset)
+	l.log.Infof("%s", msg)  // File log (no colors)
+	l.consoleLog.Infof("%s%s%s", ColorGreen, msg, ColorReset)  // Console log (with colors)
 }
 
 // Warn prints a yellow warning
 func (l *Logger) Warn(args ...interface{}) {
 	msg := fmt.Sprint(args...)
-	l.log.Warnf("%s%s%s", ColorYellow, msg, ColorReset)
+	l.log.Warnf("%s", msg)  // File log (no colors)
+	l.consoleLog.Warnf("%s%s%s", ColorYellow, msg, ColorReset)  // Console log (with colors)
 }
 
 // Track prints a green message (custom track)
 func (l *Logger) Track(args ...interface{}) {
 	msg := fmt.Sprint(args...)
-	l.log.Infof("%s%s%s", ColorGreen, msg, ColorReset)
+	l.log.Infof("%s", msg)  // File log (no colors)
+	l.consoleLog.Infof("%s%s%s", ColorGreen, msg, ColorReset)  // Console log (with colors)
 }
 
 // ErrorHandler handles errors with levels
@@ -154,7 +173,8 @@ type ErrorHandler struct {
 // Error prints red error
 func (eh *ErrorHandler) Error(args ...interface{}) string {
 	msg := fmt.Sprint(args...)
-	eh.logger.log.Errorf("%s%s%s", ColorRed, msg, ColorReset)
+	eh.logger.log.Errorf("%s", msg)  // File log (no colors)
+	eh.logger.consoleLog.Errorf("%s%s%s", ColorRed, msg, ColorReset)  // Console log (with colors)
 	return msg
 }
 

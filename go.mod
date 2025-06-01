@@ -1,4 +1,4 @@
-module logger
+module logger_with_go
 
 go 1.24.0
 

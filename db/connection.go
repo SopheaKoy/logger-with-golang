@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent/dialect"
 
-	setting "logger/config"
+	setting "logger_with_go/config"
 
 	_ "github.com/lib/pq"
 )
