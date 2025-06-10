@@ -26,7 +26,7 @@ type DBSettings struct {
 	SSLMode  string
 }
 
-func InitDB() {
+func InitDB(){
 	s := setting.LoadSettings()
 
 	db := DBSettings{
@@ -43,6 +43,7 @@ func InitDB() {
 		db.Host, db.Port, db.User, db.Password, db.Name, db.SSLMode,
 	)
 
+	// Open driver for Ent
 	var err error
 
 	DB, err = sql.Open(dialect.Postgres, dsn)
