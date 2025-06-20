@@ -2,7 +2,6 @@ package config
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"regexp"
 
@@ -72,7 +71,7 @@ func (f *CustomFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 
 	// Get the message
 	message := entry.Message
-
+	
 	// Create the log message based on the format you want
 	var logMessage string
 	if f.IsTerminal {
@@ -113,10 +112,10 @@ func NewLogger() *Logger {
 	}
 
 	// Create a multi-writer to write to both file and console
-	multiWriter := io.MultiWriter(file, os.Stdout)
+	// multiWriter := io.MultiWriter(file, os.Stdout)
 
 	// Set up the logger output
-	l.SetOutput(multiWriter)
+	l.SetOutput(file)
 	l.SetLevel(logrus.InfoLevel)
 
 	// Use different formatters for file and console
@@ -132,16 +131,6 @@ func NewLogger() *Logger {
 		log: l,
 		consoleLog: consoleLogger,
 	}
-}
-
-// Utility function to check if the output is a terminal
-func isTerminal(f *os.File) bool {
-	stat, err := f.Stat()
-	if err != nil {
-		return false
-	}
-	// Check if it's a terminal (usually a TTY device)
-	return (stat.Mode() & os.ModeCharDevice) != 0
 }
 
 // Info prints a green info message

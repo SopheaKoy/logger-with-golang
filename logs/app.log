@@ -1082,3 +1082,158 @@
 2025-06-01 12:18:41,813 - error - error - POST /api/v1/user - 405 - 0.16 ms | Body: 
 2025-06-01 12:18:42,965 - warning - warning - POST /api/v1/user - 405 - 0.03 ms | Body: 
 2025-06-01 12:18:42,965 - error - error - POST /api/v1/user - 405 - 0.03 ms | Body: 
+2025-06-20 11:18:31,748 - info - info - Starting server on port 3000...
+2025-06-20 11:18:36,265 - warning - warning - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:18:36,265 - error - error - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:18:36,307 - warning - warning - GET /favicon.ico - 404 - 0.24 ms | Body: 
+2025-06-20 11:18:36,307 - error - error - GET /favicon.ico - 404 - 0.24 ms | Body: 
+2025-06-20 11:19:04,046 - warning - warning - GET / - 404 - 0.17 ms | Body: 
+2025-06-20 11:19:04,046 - error - error - GET / - 404 - 0.17 ms | Body: 
+2025-06-20 11:19:09,687 - warning - warning - GET /api/v1/public - 200 - 0.06 ms | Body: 
+2025-06-20 11:19:09,688 - info - info - GET /api/v1/public - 200 - 0.06 ms | Body: 
+2025-06-20 11:30:56,837 - info - info - Starting server on port 3000...
+2025-06-20 11:31:02,029 - warning - warning - GET / - 404 - 0.53 ms | Body: 
+2025-06-20 11:31:02,030 - error - error - GET / - 404 - 0.53 ms | Body: 
+2025-06-20 11:31:08,748 - warning - warning - GET / - 404 - 0.13 ms | Body: 
+2025-06-20 11:31:08,748 - error - error - GET / - 404 - 0.13 ms | Body: 
+2025-06-20 11:31:11,401 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:31:11,401 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:31:11,669 - warning - warning - GET / - 404 - 0.09 ms | Body: 
+2025-06-20 11:31:11,669 - error - error - GET / - 404 - 0.09 ms | Body: 
+2025-06-20 11:31:11,881 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:31:11,881 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:31:12,114 - warning - warning - GET / - 404 - 0.09 ms | Body: 
+2025-06-20 11:31:12,115 - error - error - GET / - 404 - 0.09 ms | Body: 
+2025-06-20 11:31:12,342 - warning - warning - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:31:12,343 - error - error - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:31:13,167 - warning - warning - GET / - 404 - 0.05 ms | Body: 
+2025-06-20 11:31:13,167 - error - error - GET / - 404 - 0.05 ms | Body: 
+2025-06-20 11:31:13,958 - warning - warning - GET / - 404 - 0.10 ms | Body: 
+2025-06-20 11:31:13,959 - error - error - GET / - 404 - 0.10 ms | Body: 
+2025-06-20 11:31:14,326 - warning - warning - GET / - 404 - 0.16 ms | Body: 
+2025-06-20 11:31:14,327 - error - error - GET / - 404 - 0.16 ms | Body: 
+2025-06-20 11:37:30,756 - info - info - Starting server on port 3000...
+2025-06-20 11:37:36,730 - warning - warning - GET / - 404 - 0.74 ms | Body: 
+2025-06-20 11:37:36,730 - error - error - GET / - 404 - 0.74 ms | Body: 
+2025-06-20 11:37:45,016 - warning - warning - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:37:45,016 - error - error - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:37:55,017 - warning - warning - GET / - 404 - 0.14 ms | Body: 
+2025-06-20 11:37:55,017 - error - error - GET / - 404 - 0.14 ms | Body: 
+2025-06-20 11:37:57,606 - warning - warning - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:37:57,606 - error - error - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:38:09,447 - info - info - Starting server on port 3000...
+2025-06-20 11:38:15,774 - warning - warning - GET / - 404 - 0.34 ms | Body: 
+2025-06-20 11:38:15,774 - error - error - GET / - 404 - 0.34 ms | Body: 
+2025-06-20 11:38:22,656 - warning - warning - GET /api/v1/public - 200 - 0.03 ms | Body: 
+2025-06-20 11:38:22,656 - info - info - GET /api/v1/public - 200 - 0.03 ms | Body: 
+2025-06-20 11:38:26,987 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:38:26,987 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:11,722 - info - info - Starting server on port 3000...
+2025-06-20 11:39:12,700 - warning - warning - GET /api/v1/public - 200 - 0.22 ms | Body: 
+2025-06-20 11:39:12,700 - info - info - GET /api/v1/public - 200 - 0.22 ms | Body: 
+2025-06-20 11:39:13,525 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:13,525 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:13,761 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:13,762 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:13,956 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:13,956 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,172 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,172 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,366 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,366 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,585 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,585 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,749 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:14,749 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,004 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,004 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,203 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,203 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,390 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:15,390 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:22,547 - info - info - Starting server on port 3000...
+2025-06-20 11:39:31,991 - info - info - Starting server on port 3000...
+2025-06-20 11:39:32,934 - warning - warning - GET /api/v1/public - 200 - 0.25 ms | Body: 
+2025-06-20 11:39:32,934 - info - info - GET /api/v1/public - 200 - 0.25 ms | Body: 
+2025-06-20 11:39:44,332 - info - info - Starting server on port 3000...
+2025-06-20 11:39:50,763 - info - info - Starting server on port 3000...
+2025-06-20 11:39:51,303 - warning - warning - GET /api/v1/public - 200 - 0.27 ms | Body: 
+2025-06-20 11:39:51,303 - info - info - GET /api/v1/public - 200 - 0.27 ms | Body: 
+2025-06-20 11:39:53,426 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:39:53,427 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:40:09,446 - info - info - Starting server on port 3000...
+2025-06-20 11:40:12,878 - info - info - Starting server on port 3000...
+2025-06-20 11:40:13,932 - warning - warning - GET /api/v1/public - 200 - 0.16 ms | Body: 
+2025-06-20 11:40:13,932 - info - info - GET /api/v1/public - 200 - 0.16 ms | Body: 
+2025-06-20 11:40:24,888 - info - info - Starting server on port 3000...
+2025-06-20 11:40:25,919 - warning - warning - GET /api/v1/public - 200 - 0.19 ms | Body: 
+2025-06-20 11:40:25,919 - info - info - GET /api/v1/public - 200 - 0.19 ms | Body: 
+2025-06-20 11:41:22,195 - info - info - Starting server on port 3000...
+2025-06-20 11:41:28,294 - info - info - Starting server on port 3000...
+2025-06-20 11:42:47,006 - info - info - Starting server on port 3000...
+2025-06-20 11:42:56,871 - info - info - Starting server on port 3000...
+2025-06-20 11:43:30,710 - info - info - Starting server on port 3000...
+2025-06-20 11:43:31,955 - info - info - Starting server on port 3000...
+2025-06-20 11:43:39,819 - info - info - Starting server on port 3000...
+2025-06-20 11:43:43,327 - warning - warning - GET /api/v1/public - 200 - 0.21 ms | Body: 
+2025-06-20 11:43:43,327 - info - info - GET /api/v1/public - 200 - 0.21 ms | Body: 
+2025-06-20 11:43:51,489 - warning - warning - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:43:51,490 - info - info - GET /api/v1/public - 200 - 0.00 ms | Body: 
+2025-06-20 11:43:55,966 - warning - warning - GET / - 404 - 0.20 ms | Body: 
+2025-06-20 11:43:55,967 - error - error - GET / - 404 - 0.20 ms | Body: 
+2025-06-20 11:44:25,258 - warning - warning - GET / - 404 - 0.24 ms | Body: 
+2025-06-20 11:44:25,258 - error - error - GET / - 404 - 0.24 ms | Body: 
+2025-06-20 11:45:45,125 - info - info - Starting server on port 3000...
+2025-06-20 11:45:46,362 - warning - warning - GET / - 404 - 0.43 ms | Body: 
+2025-06-20 11:45:46,362 - error - error - GET / - 404 - 0.43 ms | Body: 
+2025-06-20 11:45:51,375 - warning - warning - GET / - 404 - 0.10 ms | Body: 
+2025-06-20 11:45:51,375 - error - error - GET / - 404 - 0.10 ms | Body: 
+2025-06-20 11:45:58,659 - info - info - Starting server on port 3000...
+2025-06-20 11:46:20,789 - info - info - Starting server on port 3000...
+2025-06-20 11:46:21,677 - info - info - Starting server on port 3000...
+2025-06-20 11:46:22,074 - warning - warning - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:46:22,074 - error - error - GET / - 404 - 0.36 ms | Body: 
+2025-06-20 11:46:56,632 - info - info - Starting server on port 3000...
+2025-06-20 11:47:05,485 - info - info - Starting server on port 3000...
+2025-06-20 11:47:07,765 - warning - warning - GET / - 404 - 0.67 ms | Body: 
+2025-06-20 11:47:07,765 - error - error - GET / - 404 - 0.67 ms | Body: 
+2025-06-20 11:47:12,447 - warning - warning - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:47:12,447 - error - error - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:49:43,767 - info - info - Starting server on port 3000...
+2025-06-20 11:49:57,112 - warning - warning - GET / - 404 - 0.37 ms | Body: 
+2025-06-20 11:49:57,112 - error - error - GET / - 404 - 0.37 ms | Body: 
+2025-06-20 11:49:58,331 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:49:58,331 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:49:58,596 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:49:58,596 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:49:58,834 - warning - warning - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:49:58,834 - error - error - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:49:59,076 - warning - warning - GET / - 404 - 0.21 ms | Body: 
+2025-06-20 11:49:59,076 - error - error - GET / - 404 - 0.21 ms | Body: 
+2025-06-20 11:49:59,677 - warning - warning - GET / - 404 - 0.06 ms | Body: 
+2025-06-20 11:49:59,677 - error - error - GET / - 404 - 0.06 ms | Body: 
+2025-06-20 11:49:59,915 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:49:59,915 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:50:00,147 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:50:00,148 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:50:00,508 - warning - warning - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:50:00,508 - error - error - GET / - 404 - 0.08 ms | Body: 
+2025-06-20 11:50:00,749 - warning - warning - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:50:00,749 - error - error - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:50:00,999 - warning - warning - GET / - 404 - 0.14 ms | Body: 
+2025-06-20 11:50:00,999 - error - error - GET / - 404 - 0.14 ms | Body: 
+2025-06-20 11:50:01,243 - warning - warning - GET / - 404 - 0.06 ms | Body: 
+2025-06-20 11:50:01,243 - error - error - GET / - 404 - 0.06 ms | Body: 
+2025-06-20 11:50:01,484 - warning - warning - GET / - 404 - 0.05 ms | Body: 
+2025-06-20 11:50:01,484 - error - error - GET / - 404 - 0.05 ms | Body: 
+2025-06-20 11:50:01,689 - warning - warning - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:50:01,689 - error - error - GET / - 404 - 0.12 ms | Body: 
+2025-06-20 11:50:01,909 - warning - warning - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:50:01,909 - error - error - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:50:02,125 - warning - warning - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:50:02,125 - error - error - GET / - 404 - 0.11 ms | Body: 
+2025-06-20 11:50:02,676 - warning - warning - GET / - 404 - 0.04 ms | Body: 
+2025-06-20 11:50:02,676 - error - error - GET / - 404 - 0.04 ms | Body: 
+2025-06-20 11:50:02,883 - warning - warning - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:50:02,883 - error - error - GET / - 404 - 0.07 ms | Body: 
+2025-06-20 11:54:06,236 - info - info - Starting server on port 3000...
